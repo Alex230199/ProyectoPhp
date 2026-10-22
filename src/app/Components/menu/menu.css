@@ -1,0 +1,45 @@
+.menu-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 16px;
+	height: auto;
+	min-height: 64px;
+	padding: 8px 16px;
+	background-color: #386074;
+	color: white;
+}
+
+.menu-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.menu-spacer {
+	flex: 1 1 auto;
+}
+
+.menu-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 4px;
+}
+
+.menu-links a {
+	color: white;
+	margin-left: 16px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.menu-links a.active-link {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+@media (max-width: 720px) {
+	.menu-links {
+		justify-content: flex-start;
+	}
+}

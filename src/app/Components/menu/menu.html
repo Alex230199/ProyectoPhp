@@ -1,1 +1,12 @@
-<p>menu works!</p>
+<mat-toolbar class="menu-toolbar">
+	<span class="menu-title">Proyecto PHP</span>
+	<span class="menu-spacer"></span>
+	<nav class="menu-links" aria-label="Secciones de la página">
+		<a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+		<a mat-button routerLink="/contexto" routerLinkActive="active-link">Contexto</a>
+		<a mat-button routerLink="/actualidad" routerLinkActive="active-link">Actualidad</a>
+		<a mat-button routerLink="/mas-informacion" routerLinkActive="active-link">Más información</a>
+		<a mat-button routerLink="/twinteach" routerLinkActive="active-link">TwinTeach</a>
+		<a mat-button routerLink="/noticias" routerLinkActive="active-link">Noticias</a>
+	</nav>
+</mat-toolbar>
