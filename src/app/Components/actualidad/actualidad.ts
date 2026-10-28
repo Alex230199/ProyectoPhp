@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   imports: [],
-  selector: 'app-actualidad',
+  selector: 'app-implementacion-y-usos',
   styleUrl: './actualidad.css',
   templateUrl: './actualidad.html',
 })
-export class Actualidad {}
+export class ImplementacionYUsos {}

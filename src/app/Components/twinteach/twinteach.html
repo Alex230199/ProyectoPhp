@@ -1,1 +1,44 @@
-<p>twinteach works!</p>
+<section class="retro-window" aria-labelledby="proteccion-twinteach">
+	<h1>Twinteach: como nos afecta esta amenaza y qué soluciones hay para solucionarlo / prevenirlo</h1>
+	<h2 id="proteccion-twinteach">Comprobar la protección de TwinTeach</h2>
+	<p>
+		TwinTeach utiliza Angular en el frontend y Laravel en el backend. Laravel se ejecuta sobre PHP, por lo que la versión instalada en el servidor del backend debe comprobarse y actualizarse.
+	</p>
+	<h2>Comprobar la versión de PHP</h2>
+	<ol>
+		<li>Accede por SSH al servidor donde se ejecuta Laravel.</li>
+		<li>Ejecuta este comando para ver la versión de PHP disponible en la terminal:</li>
+	</ol>
+	<pre><code>php -v</code></pre>
+	<p>
+		Comprueba también la versión que utiliza el servidor web o PHP-FPM, ya que puede ser distinta de la versión de la terminal. Según el texto aportado, las versiones corregidas indicadas son 8.5.12, 8.4.27, 8.3.36 y 8.2.35. Si el servidor utiliza una versión anterior, actualízala a una versión corregida y compatible con el proyecto.
+	</p>
+</section>
+
+<section aria-labelledby="capas-red-twinteach">
+	<h2 id="capas-red-twinteach">Revisar las capas de red</h2>
+	<p>
+		Comprueba que los servidores o proxies inversos expuestos a Internet, como Nginx, Apache o Cloudflare, tengan activas las reglas de protección disponibles mientras se prepara la actualización de PHP. Estas medidas son temporales y no sustituyen la actualización.
+	</p>
+</section>
+
+<section aria-labelledby="indicios-explotacion">
+	<h2 id="indicios-explotacion">Buscar indicios de explotación</h2>
+	<p>
+		La detección puede ser difícil porque un ataque podría ocurrir antes de que Laravel registre la petición. Revisa los siguientes indicios en los registros y sistemas de auditoría:
+	</p>
+	<ul>
+		<li>
+			<strong>Registros de Nginx, Apache o PHP-FPM:</strong> busca peticiones anómalas o repetidas relacionadas con la subida de archivos, cabeceras <code>Content-Type</code> inusuales y errores repentinos de memoria (OOM).
+		</li>
+		<li>
+			<strong>Auditoría del sistema operativo:</strong> revisa las alertas de herramientas de integridad de archivos (FIM) y auditoría de procesos, como auditd en Linux.
+		</li>
+		<li>
+			<strong>Procesos del usuario de PHP:</strong> investiga si el usuario que ejecuta PHP, por ejemplo <code>www-data</code>, inició procesos de consola inesperados, abrió una shell o descargó archivos desconocidos.
+		</li>
+	</ul>
+	<p>
+		La ausencia de estos indicios no demuestra por sí sola que el sistema no haya sido comprometido. Si aparecen señales sospechosas, conserva los registros y solicita una revisión de seguridad del servidor.
+	</p>
+</section>

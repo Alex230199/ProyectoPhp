@@ -1,1 +1,408 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+	--ink: #17132f;
+	--night: #11102a;
+	--cream: #f5e8bf;
+	--paper: #fff3d4;
+	--orange: #f36b36;
+	--teal: #18b8ad;
+	--pink: #ef9b9b;
+	font-family: 'VT323', 'Courier New', monospace;
+	color: var(--ink);
+	background: var(--night);
+}
+
+* {
+	box-sizing: border-box;
+	letter-spacing: 0;
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--night);
+	background-image:
+		linear-gradient(rgba(60, 67, 113, 0.22) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(60, 67, 113, 0.22) 1px, transparent 1px);
+	background-size: 24px 24px;
+	font-family: 'VT323', 'Courier New', monospace;
+	font-size: 22px;
+}
+
+.page-content {
+	width: min(1120px, calc(100% - 32px));
+	min-height: 55vh;
+	margin: 22px auto 48px;
+	padding: 20px;
+	border: 4px solid var(--ink);
+	background-color: var(--cream);
+	box-shadow: 8px 8px 0 var(--teal);
+}
+
+.page-content section {
+	margin: 0 0 18px;
+	padding: 22px;
+	border: 3px solid var(--ink);
+	background-color: var(--paper);
+	box-shadow: 4px 4px 0 var(--ink);
+}
+
+.page-content section:last-child {
+	margin-bottom: 0;
+}
+
+.page-content .retro-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: stretch;
+	gap: 18px;
+}
+
+.page-content .retro-grid > .retro-window {
+	min-width: 0;
+	margin: 0;
+}
+
+.page-content .news-feature,
+.page-content .news-sources,
+.page-content .info-wide {
+	grid-column: 1 / -1;
+}
+
+.page-content section.retro-window,
+.page-content details.retro-window {
+	padding: 0;
+	border: 3px solid var(--ink);
+	background-color: var(--paper);
+	box-shadow: 5px 5px 0 var(--ink);
+	overflow: hidden;
+}
+
+.page-content .retro-window > h1,
+.page-content .retro-window > h2,
+.page-content .retro-window > summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 0;
+	padding: 10px 12px;
+	border: 0;
+	border-bottom: 3px solid var(--ink);
+	background-color: var(--orange);
+}
+
+.page-content .retro-window > h1::after,
+.page-content .retro-window > summary::after {
+	flex: 0 0 auto;
+	font-family: 'VT323', 'Courier New', monospace;
+	font-size: 22px;
+	content: '− □ ×';
+}
+
+.page-content section.retro-window > h1 ~ *,
+.page-content section.retro-window > h2 ~ *,
+.page-content details.retro-window > :not(summary) {
+	margin-right: 16px;
+	margin-left: 16px;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+	margin-top: 0;
+	color: var(--ink);
+	line-height: 1.55;
+}
+
+.page-content h1 {
+	margin-bottom: 18px;
+	padding: 12px 14px;
+	border: 3px solid var(--ink);
+	background: var(--orange);
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 18px;
+}
+
+.page-content h2 {
+	margin-bottom: 14px;
+	padding: 8px 10px;
+	border: 2px solid var(--ink);
+	background-color: var(--teal);
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 13px;
+}
+
+.page-content h3,
+.page-content h4 {
+	margin-bottom: 8px;
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 11px;
+}
+
+.page-content p,
+.page-content li,
+.page-content td,
+.page-content th {
+	font-size: 22px;
+	line-height: 1.25;
+}
+
+.page-content p {
+	margin: 0 0 14px;
+}
+
+.page-content p:last-child {
+	margin-bottom: 0;
+}
+
+.page-content ul,
+.page-content ol {
+	padding-left: 26px;
+}
+
+.page-content li {
+	margin-bottom: 8px;
+}
+
+.page-content a {
+	color: #087c78;
+	font-weight: 700;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+.page-content a:hover {
+	color: #b74621;
+}
+
+.page-content article,
+.page-content .actualidad-grupo-anidado {
+	margin: 12px 0;
+	padding: 16px;
+	border: 2px solid var(--ink);
+	background-color: #f4dca8;
+	box-shadow: 3px 3px 0 var(--ink);
+}
+
+.page-content details {
+	margin-top: 18px;
+	padding: 14px;
+	border: 3px solid var(--ink);
+	background-color: var(--teal);
+	box-shadow: 4px 4px 0 var(--ink);
+}
+
+.page-content details > summary {
+	background-color: var(--orange);
+}
+
+.page-content details[open] > summary {
+	background-color: var(--teal);
+}
+
+.page-content .curiosities-toggle {
+	background-color: var(--orange);
+}
+
+.page-content .curiosity-item {
+	margin-top: 12px;
+	padding: 12px;
+	border: 2px solid var(--ink);
+	background-color: var(--cream);
+	box-shadow: none;
+}
+
+.page-content summary {
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 12px;
+	overflow-wrap: anywhere;
+	cursor: pointer;
+}
+
+.page-content .history-period {
+	margin: 0 0 16px;
+}
+
+.page-content .history-period summary {
+	line-height: 1.8;
+}
+
+.page-content .history-image {
+	margin: 16px 0;
+	border: 3px solid var(--ink);
+	background-color: var(--cream);
+}
+
+.page-content .history-image img {
+	display: block;
+	width: 100%;
+	max-height: 260px;
+	object-fit: cover;
+}
+
+.page-content .history-image figcaption {
+	padding: 8px 10px;
+	font-size: 18px;
+}
+
+.page-content .info-image {
+	margin-top: 16px;
+	margin-bottom: 12px;
+	border: 3px solid var(--ink);
+	background-color: var(--cream);
+}
+
+.page-content .info-image img {
+	display: block;
+	width: 100%;
+	max-height: 220px;
+	object-fit: cover;
+}
+
+.page-content .info-image figcaption {
+	padding: 8px 10px;
+	font-size: 18px;
+}
+
+.page-content details ul {
+	margin-bottom: 0;
+}
+
+.page-content table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--paper);
+}
+
+.page-content th,
+.page-content td {
+	padding: 10px;
+	border: 2px solid var(--ink);
+	text-align: left;
+	vertical-align: top;
+}
+
+.page-content th {
+	background-color: var(--teal);
+}
+
+.page-content pre {
+	max-width: 100%;
+	padding: 14px;
+	border: 2px solid var(--ink);
+	background-color: var(--night);
+	color: var(--cream);
+	overflow-x: auto;
+}
+
+.page-content code {
+	font-family: 'Courier New', monospace;
+	font-size: 0.85em;
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.page-content {
+		width: calc(100% - 40px);
+		margin: 20px auto 36px;
+		padding: 16px;
+	}
+
+	.page-content section {
+		padding: 18px;
+	}
+
+	.page-content h1 {
+		font-size: 16px;
+	}
+
+	.page-content h2 {
+		font-size: 12px;
+	}
+
+	.page-content table {
+		display: block;
+		overflow-x: auto;
+	}
+}
+
+@media (max-width: 640px) {
+	.page-content {
+		width: calc(100% - 20px);
+		margin: 16px auto 28px;
+		padding: 12px;
+		box-shadow: 5px 5px 0 var(--teal);
+	}
+
+	.page-content section {
+		padding: 15px;
+	}
+
+	.page-content h1 {
+		padding: 10px;
+		font-size: 12px;
+	}
+
+	.page-content h2 {
+		font-size: 9px;
+	}
+
+	.page-content h3,
+	.page-content h4 {
+		font-size: 9px;
+	}
+
+	.page-content p,
+	.page-content li,
+	.page-content td,
+	.page-content th {
+		font-size: 20px;
+	}
+
+	.page-content ul,
+	.page-content ol {
+		padding-left: 20px;
+	}
+
+	.page-content summary {
+		font-size: 10px;
+		line-height: 1.8;
+	}
+
+	.page-content table {
+		display: block;
+		overflow-x: auto;
+	}
+
+	.page-content th,
+	.page-content td {
+		min-width: 130px;
+		padding: 8px;
+	}
+
+	.page-content pre {
+		padding: 10px;
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-content .retro-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 14px;
+	}
+
+	.page-content .news-feature,
+	.page-content .news-sources,
+	.page-content .more-info-layout > .info-wide {
+		grid-column: auto;
+	}
+}

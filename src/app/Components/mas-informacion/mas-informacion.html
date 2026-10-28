@@ -1,1 +1,68 @@
-<p>mas-informacion works!</p>
+<section class="retro-window" aria-labelledby="php2shell">
+	<h1 id="php2shell">PHP2Shell: detalles de la vulnerabilidad</h1>
+	<p>
+		Se trata de dos vulnerabilidades críticas de Ejecución Remota de Código (RCE) en el núcleo de PHP, registradas como CVE-2026-109618 y CVE-2026-109619. Ambas tienen una puntuación de 9,2 sobre 10 en la escala CVSS.
+	</p>
+</section>
+
+	<div class="more-info-layout retro-grid">
+		<details class="retro-window info-panel">
+			<summary>¿En qué consisten?</summary>
+			<figure class="info-image">
+				<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80" alt="Circuitos y luces que representan la seguridad informática" loading="lazy" />
+				<figcaption>La vulnerabilidad afecta al motor que procesa las peticiones PHP.</figcaption>
+			</figure>
+			<p>
+				Son fallos de seguridad de memoria que ocurren durante la gestión de errores internos, como el agotamiento de memoria o el procesamiento de subidas de archivos multipart, y por estados globales obsoletos. El motor de PHP puede interpretar datos corruptos o parcialmente inicializados como válidos. Según el texto aportado, esto permitiría a un atacante no autenticado corromper la memoria del proceso y ejecutar comandos en el servidor antes de que se ejecute el código de la aplicación web.
+			</p>
+		</details>
+
+		<details class="retro-window info-panel">
+			<summary>Versiones y configuraciones afectadas</summary>
+			<p>
+				El texto indica que afecta a las ramas activas 8.2, 8.3, 8.4 y 8.5, además de versiones anteriores sin soporte, como 8.1, 8.0 y 7.4. También menciona configuraciones que procesan solicitudes PHP, como PHP-FPM, Apache con mod_php, php-cgi, FrankenPHP y LiteSpeed, si no están actualizadas.
+			</p>
+		</details>
+
+		<details class="retro-window info-panel">
+			<summary>Actualizaciones oficiales</summary>
+			<p>La solución definitiva indicada es actualizar PHP a una versión corregida:</p>
+			<ul>
+				<li>PHP 8.5: 8.5.12</li>
+				<li>PHP 8.4: 8.4.27</li>
+				<li>PHP 8.3: 8.3.36</li>
+				<li>PHP 8.2: 8.2.35</li>
+			</ul>
+			<p>
+				Las versiones anteriores que ya no reciben soporte gratuito requieren migrar a una rama mantenida o contar con soporte comercial extendido.
+			</p>
+		</details>
+
+		<details class="retro-window info-panel">
+			<summary>Mitigaciones temporales</summary>
+			<p>Si no es posible actualizar inmediatamente, el texto propone mitigaciones temporales:</p>
+			<ul>
+				<li>Usar un WAF, como Cloudflare, para filtrar peticiones maliciosas.</li>
+				<li>Configurar reglas en Nginx o Apache para bloquear peticiones multipart anómalas.</li>
+				<li>Desactivar el progreso de carga en sesiones con <code>session.upload_progress.enabled=0</code>.</li>
+			</ul>
+			<p>Estas medidas reducen la exposición, pero no sustituyen la actualización ni garantizan protección total.</p>
+		</details>
+
+		<details class="retro-window info-panel info-wide">
+			<summary>Respuesta de seguridad e impacto en aplicaciones</summary>
+			<figure class="info-image">
+				<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Filas de servidores en un centro de datos" loading="lazy" />
+				<figcaption>La seguridad del servidor depende también de mantener actualizado el intérprete.</figcaption>
+			</figure>
+			<p>
+				El texto señala que organismos como CERT-EU e INCIBE recomendaron aplicar los parches o aislar los servidores expuestos a Internet. También indica que Cloudflare desplegó protecciones preventivas que bloquearon intentos de ataque automatizados.
+			</p>
+			<p>
+				La vulnerabilidad se encontraría en el intérprete de PHP, antes de que arranque el código de Laravel. Por eso, las validaciones, autenticación y medidas de seguridad de la aplicación no sustituyen la actualización del motor PHP.
+			</p>
+			<p>
+				Además de la ejecución de comandos, el texto advierte de una posible lectura no autorizada de la memoria del proceso PHP, que podría exponer credenciales, tokens de API u otros datos activos.
+			</p>
+		</details>
+	</div>

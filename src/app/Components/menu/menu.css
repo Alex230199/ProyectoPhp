@@ -1,17 +1,17 @@
 .menu-toolbar {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px 16px;
-	height: auto;
-	min-height: 64px;
-	padding: 8px 16px;
-	background-color: #386074;
-	color: white;
+	gap: 12px 20px;
+	min-height: 72px;
+	padding: 12px max(16px, calc((100% - 1120px) / 2));
+	border-bottom: 4px solid var(--orange);
+	background-color: var(--night);
+	color: var(--cream);
 }
 
 .menu-title {
-	font-size: 1.1rem;
-	font-weight: 600;
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 11px;
 	white-space: nowrap;
 }
 
@@ -23,23 +23,84 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
-	gap: 4px;
+	gap: 8px;
 }
 
 .menu-links a {
-	color: white;
-	margin-left: 16px;
-	font-size: 16px;
+	min-height: 36px;
+	margin: 0;
+	padding: 0 10px;
+	border: 2px solid var(--teal);
+	border-radius: 0;
+	background-color: var(--cream);
+	color: var(--ink);
+	font-family: 'VT323', 'Courier New', monospace;
+	font-size: 19px;
 	text-decoration: none;
 }
 
 .menu-links a.active-link {
-	text-decoration: underline;
-	text-underline-offset: 4px;
+	border-color: var(--orange);
+	background-color: var(--orange);
+	color: var(--ink);
+	text-decoration: none;
 }
 
-@media (max-width: 720px) {
+.menu-links a:hover {
+	background-color: var(--teal);
+	color: var(--ink);
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.menu-toolbar {
+		padding: 14px 20px;
+	}
+
+	.menu-title {
+		width: 100%;
+	}
+
+	.menu-spacer {
+		display: none;
+	}
+
 	.menu-links {
 		justify-content: flex-start;
+		width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+	.menu-toolbar {
+		gap: 12px;
+		padding: 12px 10px;
+	}
+
+	.menu-title {
+		width: 100%;
+		font-size: 10px;
+	}
+
+	.menu-spacer {
+		display: none;
+	}
+
+	.menu-links {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		justify-content: stretch;
+		width: 100%;
+	}
+
+	.menu-links a {
+		display: flex;
+		min-width: 0;
+		min-height: 42px;
+		height: auto;
+		padding: 5px;
+		justify-content: center;
+		white-space: normal;
+		line-height: 1.1;
+		text-align: center;
 	}
 }
