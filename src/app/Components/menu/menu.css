@@ -11,7 +11,7 @@
 
 .menu-title {
 	font-family: 'Press Start 2P', 'Courier New', monospace;
-	font-size: 11px;
+	font-size: 14px;
 	white-space: nowrap;
 }
 
@@ -78,7 +78,7 @@
 
 	.menu-title {
 		width: 100%;
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 	.menu-spacer {

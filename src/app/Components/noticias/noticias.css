@@ -1,0 +1,44 @@
+.news-sources,
+.news-sources[open],
+.news-sources > summary,
+.news-sources[open] > summary {
+	background-color: #73d6a2;
+}
+
+.news-sources .source-list {
+	padding: 0;
+	list-style: none;
+}
+
+.news-sources .source-list a {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.news-sources .source-list a:hover {
+	color: #b74621;
+}
+
+.news-sources .source-list a:focus-visible {
+	outline: 3px solid var(--ink);
+	outline-offset: 4px;
+}
+
+.news-sources .source-list img {
+	flex: 0 0 48px;
+	width: 48px;
+	height: 48px;
+	padding: 5px;
+	border: 3px solid var(--ink);
+	background-color: var(--pink);
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.2) 50%, transparent 50%),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, transparent 50%);
+	background-size: 10px 10px;
+	box-shadow: 3px 3px 0 var(--ink);
+	object-fit: contain;
+	image-rendering: pixelated;
+}

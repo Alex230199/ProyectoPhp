@@ -85,8 +85,7 @@ body {
 }
 
 .page-content .retro-window > h1,
-.page-content .retro-window > h2,
-.page-content .retro-window > summary {
+.page-content .retro-window > h2 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -96,6 +95,17 @@ body {
 	border: 0;
 	border-bottom: 3px solid var(--ink);
 	background-color: var(--orange);
+}
+
+.page-content .retro-window > summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 0;
+	padding: 10px 12px;
+	border: 0;
+	border-bottom: 3px solid var(--ink);
 }
 
 .page-content .retro-window > h1::after,
@@ -201,15 +211,19 @@ body {
 }
 
 .page-content details > summary {
+	background-color: var(--teal);
+}
+
+.page-content details[open] {
 	background-color: var(--orange);
 }
 
 .page-content details[open] > summary {
-	background-color: var(--teal);
+	background-color: var(--orange);
 }
 
 .page-content .curiosities-toggle {
-	background-color: var(--orange);
+	background-color: var(--teal);
 }
 
 .page-content .curiosity-item {
