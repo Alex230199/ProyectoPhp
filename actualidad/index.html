@@ -1,0 +1,679 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>ProyectoPhp</title>
+  <base href="/ProyectoPhp/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preload" as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/pressstart2p/v16/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2"><style>html{--mat-sys-background:light-dark(#f7faf9, #101414);--mat-sys-error:light-dark(#ba1a1a, #ffb4ab);--mat-sys-error-container:light-dark(#ffdad6, #93000a);--mat-sys-inverse-on-surface:light-dark(#eff1f0, #2d3131);--mat-sys-inverse-primary:light-dark(#00dddd, #006a6a);--mat-sys-inverse-surface:light-dark(#2d3131, #e0e3e2);--mat-sys-on-background:light-dark(#191c1c, #e0e3e2);--mat-sys-on-error:light-dark(#ffffff, #690005);--mat-sys-on-error-container:light-dark(#93000a, #ffdad6);--mat-sys-on-primary:light-dark(#ffffff, #003737);--mat-sys-on-primary-container:light-dark(#004f4f, #00fbfb);--mat-sys-on-primary-fixed:light-dark(#002020, #002020);--mat-sys-on-primary-fixed-variant:light-dark(#004f4f, #004f4f);--mat-sys-on-secondary:light-dark(#ffffff, #1b3534);--mat-sys-on-secondary-container:light-dark(#324b4b, #cce8e7);--mat-sys-on-secondary-fixed:light-dark(#051f1f, #051f1f);--mat-sys-on-secondary-fixed-variant:light-dark(#324b4b, #324b4b);--mat-sys-on-surface:light-dark(#191c1c, #e0e3e2);--mat-sys-on-surface-variant:light-dark(#3f4948, #dae5e4);--mat-sys-on-tertiary:light-dark(#ffffff, #502400);--mat-sys-on-tertiary-container:light-dark(#723600, #ffdcc7);--mat-sys-on-tertiary-fixed:light-dark(#311300, #311300);--mat-sys-on-tertiary-fixed-variant:light-dark(#723600, #723600);--mat-sys-outline:light-dark(#6f7979, #889392);--mat-sys-outline-variant:light-dark(#bec9c8, #3f4948);--mat-sys-primary:light-dark(#006a6a, #00dddd);--mat-sys-primary-container:light-dark(#00fbfb, #004f4f);--mat-sys-primary-fixed:light-dark(#00fbfb, #00fbfb);--mat-sys-primary-fixed-dim:light-dark(#00dddd, #00dddd);--mat-sys-scrim:light-dark(#000000, #000000);--mat-sys-secondary:light-dark(#4a6363, #b0cccb);--mat-sys-secondary-container:light-dark(#cce8e7, #324b4b);--mat-sys-secondary-fixed:light-dark(#cce8e7, #cce8e7);--mat-sys-secondary-fixed-dim:light-dark(#b0cccb, #b0cccb);--mat-sys-shadow:light-dark(#000000, #000000);--mat-sys-surface:light-dark(#f7faf9, #101414);--mat-sys-surface-bright:light-dark(#f7faf9, #363a39);--mat-sys-surface-container:light-dark(#ebefed, #1c2020);--mat-sys-surface-container-high:light-dark(#e6e9e7, #272b2a);--mat-sys-surface-container-highest:light-dark(#e0e3e2, #313635);--mat-sys-surface-container-low:light-dark(#f1f4f3, #191c1c);--mat-sys-surface-container-lowest:light-dark(#ffffff, #0b0f0e);--mat-sys-surface-dim:light-dark(#d7dbd9, #101414);--mat-sys-surface-tint:light-dark(#006a6a, #00dddd);--mat-sys-surface-variant:light-dark(#dae5e4, #3f4948);--mat-sys-tertiary:light-dark(#964900, #ffb787);--mat-sys-tertiary-container:light-dark(#ffdcc7, #723600);--mat-sys-tertiary-fixed:light-dark(#ffdcc7, #ffdcc7);--mat-sys-tertiary-fixed-dim:light-dark(#ffb787, #ffb787);--mat-sys-neutral-variant20:#293232;--mat-sys-neutral10:#191c1c;--mat-sys-level0:0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);--mat-sys-level1:0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);--mat-sys-level2:0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);--mat-sys-level3:0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);--mat-sys-level4:0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);--mat-sys-level5:0px 7px 8px -4px rgba(0, 0, 0, .2), 0px 12px 17px 2px rgba(0, 0, 0, .14), 0px 5px 22px 4px rgba(0, 0, 0, .12);--mat-sys-body-large:400 1rem / 1.5rem Roboto;--mat-sys-body-large-font:Roboto;--mat-sys-body-large-line-height:1.5rem;--mat-sys-body-large-size:1rem;--mat-sys-body-large-tracking:.031rem;--mat-sys-body-large-weight:400;--mat-sys-body-medium:400 .875rem / 1.25rem Roboto;--mat-sys-body-medium-font:Roboto;--mat-sys-body-medium-line-height:1.25rem;--mat-sys-body-medium-size:.875rem;--mat-sys-body-medium-tracking:.016rem;--mat-sys-body-medium-weight:400;--mat-sys-body-small:400 .75rem / 1rem Roboto;--mat-sys-body-small-font:Roboto;--mat-sys-body-small-line-height:1rem;--mat-sys-body-small-size:.75rem;--mat-sys-body-small-tracking:.025rem;--mat-sys-body-small-weight:400;--mat-sys-display-large:400 3.562rem / 4rem Roboto;--mat-sys-display-large-font:Roboto;--mat-sys-display-large-line-height:4rem;--mat-sys-display-large-size:3.562rem;--mat-sys-display-large-tracking:-.016rem;--mat-sys-display-large-weight:400;--mat-sys-display-medium:400 2.812rem / 3.25rem Roboto;--mat-sys-display-medium-font:Roboto;--mat-sys-display-medium-line-height:3.25rem;--mat-sys-display-medium-size:2.812rem;--mat-sys-display-medium-tracking:0;--mat-sys-display-medium-weight:400;--mat-sys-display-small:400 2.25rem / 2.75rem Roboto;--mat-sys-display-small-font:Roboto;--mat-sys-display-small-line-height:2.75rem;--mat-sys-display-small-size:2.25rem;--mat-sys-display-small-tracking:0;--mat-sys-display-small-weight:400;--mat-sys-headline-large:400 2rem / 2.5rem Roboto;--mat-sys-headline-large-font:Roboto;--mat-sys-headline-large-line-height:2.5rem;--mat-sys-headline-large-size:2rem;--mat-sys-headline-large-tracking:0;--mat-sys-headline-large-weight:400;--mat-sys-headline-medium:400 1.75rem / 2.25rem Roboto;--mat-sys-headline-medium-font:Roboto;--mat-sys-headline-medium-line-height:2.25rem;--mat-sys-headline-medium-size:1.75rem;--mat-sys-headline-medium-tracking:0;--mat-sys-headline-medium-weight:400;--mat-sys-headline-small:400 1.5rem / 2rem Roboto;--mat-sys-headline-small-font:Roboto;--mat-sys-headline-small-line-height:2rem;--mat-sys-headline-small-size:1.5rem;--mat-sys-headline-small-tracking:0;--mat-sys-headline-small-weight:400;--mat-sys-label-large:500 .875rem / 1.25rem Roboto;--mat-sys-label-large-font:Roboto;--mat-sys-label-large-line-height:1.25rem;--mat-sys-label-large-size:.875rem;--mat-sys-label-large-tracking:.006rem;--mat-sys-label-large-weight:500;--mat-sys-label-large-weight-prominent:700;--mat-sys-label-medium:500 .75rem / 1rem Roboto;--mat-sys-label-medium-font:Roboto;--mat-sys-label-medium-line-height:1rem;--mat-sys-label-medium-size:.75rem;--mat-sys-label-medium-tracking:.031rem;--mat-sys-label-medium-weight:500;--mat-sys-label-medium-weight-prominent:700;--mat-sys-label-small:500 .688rem / 1rem Roboto;--mat-sys-label-small-font:Roboto;--mat-sys-label-small-line-height:1rem;--mat-sys-label-small-size:.688rem;--mat-sys-label-small-tracking:.031rem;--mat-sys-label-small-weight:500;--mat-sys-title-large:400 1.375rem / 1.75rem Roboto;--mat-sys-title-large-font:Roboto;--mat-sys-title-large-line-height:1.75rem;--mat-sys-title-large-size:1.375rem;--mat-sys-title-large-tracking:0;--mat-sys-title-large-weight:400;--mat-sys-title-medium:500 1rem / 1.5rem Roboto;--mat-sys-title-medium-font:Roboto;--mat-sys-title-medium-line-height:1.5rem;--mat-sys-title-medium-size:1rem;--mat-sys-title-medium-tracking:.009rem;--mat-sys-title-medium-weight:500;--mat-sys-title-small:500 .875rem / 1.25rem Roboto;--mat-sys-title-small-font:Roboto;--mat-sys-title-small-line-height:1.25rem;--mat-sys-title-small-size:.875rem;--mat-sys-title-small-tracking:.006rem;--mat-sys-title-small-weight:500;--mat-sys-corner-extra-large:28px;--mat-sys-corner-extra-large-top:28px 28px 0 0;--mat-sys-corner-extra-small:4px;--mat-sys-corner-extra-small-top:4px 4px 0 0;--mat-sys-corner-full:9999px;--mat-sys-corner-large:16px;--mat-sys-corner-large-end:0 16px 16px 0;--mat-sys-corner-large-start:16px 0 0 16px;--mat-sys-corner-large-top:16px 16px 0 0;--mat-sys-corner-medium:12px;--mat-sys-corner-none:0;--mat-sys-corner-small:8px;--mat-sys-dragged-state-layer-opacity:.16;--mat-sys-focus-state-layer-opacity:.12;--mat-sys-hover-state-layer-opacity:.08;--mat-sys-pressed-state-layer-opacity:.12}@font-face{font-family:"Press Start 2P";font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/pressstart2p/v16/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:VT323;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isfFJU.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--ink:#17132f;--night:#11102a;--cream:#f5e8bf;--paper:#fff3d4;--orange:#f36b36;--teal:#18b8ad;--pink:#ef9b9b;font-family:VT323,Courier New,monospace;color:var(--ink);background:var(--night)}*{box-sizing:border-box;letter-spacing:0}html{min-height:100%}body{min-width:320px;min-height:100vh;margin:0;background-color:var(--night);background-image:linear-gradient(rgba(60,67,113,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(60,67,113,.22) 1px,transparent 1px);background-size:24px 24px;font-family:VT323,Courier New,monospace;font-size:22px}.page-content{width:min(1120px,calc(100% - 32px));min-height:55vh;margin:22px auto 48px;padding:20px;border:4px solid var(--ink);background-color:var(--cream);box-shadow:8px 8px 0 var(--teal)}.page-content section{margin:0 0 18px;padding:22px;border:3px solid var(--ink);background-color:var(--paper);box-shadow:4px 4px 0 var(--ink)}.page-content section:last-child{margin-bottom:0}.page-content section.retro-window,.page-content details.retro-window{padding:0;border:3px solid var(--ink);background-color:var(--paper);box-shadow:5px 5px 0 var(--ink);overflow:hidden}.page-content .retro-window>h1,.page-content .retro-window>h2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:10px 12px;border:0;border-bottom:3px solid var(--ink);background-color:var(--orange)}.page-content .retro-window>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:10px 12px;border:0;border-bottom:3px solid var(--ink)}.page-content .retro-window>h1:after,.page-content .retro-window>summary:after{flex:0 0 auto;font-family:VT323,Courier New,monospace;font-size:22px;content:"\2212  \25a1  \d7"}.page-content section.retro-window>h1~*,.page-content section.retro-window>h2~*,.page-content details.retro-window>:not(summary){margin-right:16px;margin-left:16px}.page-content h1,.page-content h2,.page-content h3,.page-content h4{margin-top:0;color:var(--ink);line-height:1.55}.page-content h1{margin-bottom:18px;padding:12px 14px;border:3px solid var(--ink);background:var(--orange);font-family:"Press Start 2P",Courier New,monospace;font-size:18px}.page-content h2{margin-bottom:14px;padding:8px 10px;border:2px solid var(--ink);background-color:var(--teal);font-family:"Press Start 2P",Courier New,monospace;font-size:13px}.page-content h3,.page-content h4{margin-bottom:8px;font-family:"Press Start 2P",Courier New,monospace;font-size:11px}.page-content p,.page-content td,.page-content th{font-size:22px;line-height:1.25}.page-content p{margin:0 0 14px}.page-content p:last-child{margin-bottom:0}.page-content article,.page-content .actualidad-grupo-anidado{margin:12px 0;padding:16px;border:2px solid var(--ink);background-color:#f4dca8;box-shadow:3px 3px 0 var(--ink)}.page-content details{margin-top:18px;padding:14px;border:3px solid var(--ink);background-color:var(--teal);box-shadow:4px 4px 0 var(--ink)}.page-content details>summary{background-color:var(--teal)}.page-content summary{font-family:"Press Start 2P",Courier New,monospace;font-size:12px;overflow-wrap:anywhere;cursor:pointer}.page-content table{width:100%;border-collapse:collapse;background:var(--paper)}.page-content th,.page-content td{padding:10px;border:2px solid var(--ink);text-align:left;vertical-align:top}.page-content th{background-color:var(--teal)}.page-content pre{max-width:100%;padding:14px;border:2px solid var(--ink);background-color:var(--night);color:var(--cream);overflow-x:auto}.page-content code{font-family:Courier New,monospace;font-size:.85em}@media(min-width:641px)and (max-width:1024px){.page-content{width:calc(100% - 40px);margin:20px auto 36px;padding:16px}.page-content section{padding:18px}.page-content h1{font-size:16px}.page-content h2{font-size:12px}.page-content table{display:block;overflow-x:auto}}@media(max-width:640px){.page-content{width:calc(100% - 20px);margin:16px auto 28px;padding:12px;box-shadow:5px 5px 0 var(--teal)}.page-content section{padding:15px}.page-content h1{padding:10px;font-size:12px}.page-content h2,.page-content h3,.page-content h4{font-size:9px}.page-content p,.page-content td,.page-content th{font-size:20px}.page-content summary{font-size:10px;line-height:1.8}.page-content table{display:block;overflow-x:auto}.page-content th,.page-content td{min-width:130px;padding:8px}.page-content pre{padding:10px;white-space:pre-wrap;word-break:break-word}}</style><link rel="stylesheet" href="styles-ILTFIHYG.css" media="print" data-beasties-media="all"><noscript><link rel="stylesheet" href="styles-ILTFIHYG.css"></noscript><style ng-app-id="ng">.site-image[_ngcontent-ng-c527894907]{width:min(1120px,calc(100% - 32px));height:230px;margin:20px auto 0;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--teal);overflow:hidden}.site-image[_ngcontent-ng-c527894907]   img[_ngcontent-ng-c527894907]{display:block;width:100%;height:100%;object-fit:cover;object-position:center 54%}@media(min-width:641px)and (max-width:1024px){.site-image[_ngcontent-ng-c527894907]{width:calc(100% - 40px);height:190px}}@media(max-width:640px){.site-image[_ngcontent-ng-c527894907]{width:calc(100% - 20px);height:150px}}</style><style ng-app-id="ng">.menu-toolbar[_ngcontent-ng-c177442650]{display:flex;flex-wrap:wrap;gap:12px 20px;min-height:72px;padding:12px max(16px,calc((100% - 1120px)/2));border-bottom:4px solid var(--orange);background-color:var(--night);color:var(--cream)}.menu-title[_ngcontent-ng-c177442650]{font-family:"Press Start 2P",Courier New,monospace;font-size:14px;white-space:nowrap}.menu-spacer[_ngcontent-ng-c177442650]{flex:1 1 auto}.mobile-menu[_ngcontent-ng-c177442650]{display:none}.menu-links[_ngcontent-ng-c177442650]{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}.menu-links[_ngcontent-ng-c177442650]   a[_ngcontent-ng-c177442650]{min-height:36px;margin:0;padding:0 10px;border:2px solid var(--teal);border-radius:0;background-color:var(--cream);color:var(--ink);font-family:VT323,Courier New,monospace;font-size:19px;text-decoration:none}.menu-links[_ngcontent-ng-c177442650]   a.active-link[_ngcontent-ng-c177442650]{border-color:var(--orange);background-color:var(--orange);color:var(--ink);text-decoration:none}.menu-links[_ngcontent-ng-c177442650]   a[_ngcontent-ng-c177442650]:hover{background-color:var(--teal);color:var(--ink)}@media(min-width:641px)and (max-width:1024px){.menu-toolbar[_ngcontent-ng-c177442650]{padding:14px 20px}.menu-title[_ngcontent-ng-c177442650]{width:100%}.menu-spacer[_ngcontent-ng-c177442650]{display:none}.menu-links[_ngcontent-ng-c177442650]{justify-content:flex-start;width:100%}}@media(max-width:640px){.menu-toolbar[_ngcontent-ng-c177442650]{position:relative;z-index:10;flex-wrap:nowrap;align-items:center;gap:12px;padding:12px 10px}.menu-title[_ngcontent-ng-c177442650]{flex:1 1 auto;width:auto;font-size:12px}.menu-spacer[_ngcontent-ng-c177442650], .desktop-menu-links[_ngcontent-ng-c177442650]{display:none}.mobile-menu[_ngcontent-ng-c177442650]{position:relative;display:block;flex:0 0 auto}.mobile-menu[_ngcontent-ng-c177442650] > summary[_ngcontent-ng-c177442650]{display:flex;min-height:42px;align-items:center;justify-content:space-between;gap:12px;padding:6px 10px;border:2px solid var(--teal);background-color:var(--cream);color:var(--ink);font-family:VT323,Courier New,monospace;font-size:20px;list-style:none;cursor:pointer}.mobile-menu[_ngcontent-ng-c177442650] > summary[_ngcontent-ng-c177442650]::-webkit-details-marker{display:none}.mobile-menu[_ngcontent-ng-c177442650] > summary[_ngcontent-ng-c177442650]:after{content:"+"}.mobile-menu[open][_ngcontent-ng-c177442650] > summary[_ngcontent-ng-c177442650]{background-color:var(--orange)}.mobile-menu[open][_ngcontent-ng-c177442650] > summary[_ngcontent-ng-c177442650]:after{content:"\2212"}.mobile-menu-links[_ngcontent-ng-c177442650]{position:absolute;top:calc(100% + 12px);right:0;z-index:20;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(340px,calc(100vw - 20px));padding:10px;border:3px solid var(--ink);background-color:var(--night);box-shadow:5px 5px 0 var(--teal)}.mobile-menu-links[_ngcontent-ng-c177442650]   a[_ngcontent-ng-c177442650]{display:flex;min-width:0;min-height:42px;height:auto;padding:5px;justify-content:center;white-space:normal;line-height:1.1;text-align:center}}</style><style ng-app-id="ng">.mat-toolbar {
+  background: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
+  color: var(--mat-toolbar-container-text-color, var(--mat-sys-on-surface));
+}
+.mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
+  font-family: var(--mat-toolbar-title-text-font, var(--mat-sys-title-large-font));
+  font-size: var(--mat-toolbar-title-text-size, var(--mat-sys-title-large-size));
+  line-height: var(--mat-toolbar-title-text-line-height, var(--mat-sys-title-large-line-height));
+  font-weight: var(--mat-toolbar-title-text-weight, var(--mat-sys-title-large-weight));
+  letter-spacing: var(--mat-toolbar-title-text-tracking, var(--mat-sys-title-large-tracking));
+  margin: 0;
+}
+@media (forced-colors: active) {
+  .mat-toolbar {
+    outline: solid 1px;
+  }
+}
+.mat-toolbar .mat-form-field-underline,
+.mat-toolbar .mat-form-field-ripple,
+.mat-toolbar .mat-focused .mat-form-field-ripple {
+  background-color: currentColor;
+}
+.mat-toolbar .mat-form-field-label,
+.mat-toolbar .mat-focused .mat-form-field-label,
+.mat-toolbar .mat-select-value,
+.mat-toolbar .mat-select-arrow,
+.mat-toolbar .mat-form-field.mat-focused .mat-select-arrow {
+  color: inherit;
+}
+.mat-toolbar .mat-input-element {
+  caret-color: currentColor;
+}
+.mat-toolbar .mat-mdc-button-base.mat-mdc-button-base.mat-unthemed {
+  --mat-button-text-label-text-color: var(--mat-toolbar-container-text-color, var(--mat-sys-on-surface));
+  --mat-button-outlined-label-text-color: var(--mat-toolbar-container-text-color, var(--mat-sys-on-surface));
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  height: var(--mat-toolbar-standard-height, 64px);
+}
+@media (max-width: 599px) {
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: var(--mat-toolbar-mobile-height, 56px);
+  }
+}
+
+.mat-toolbar-multiple-rows {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: 100%;
+  min-height: var(--mat-toolbar-standard-height, 64px);
+}
+@media (max-width: 599px) {
+  .mat-toolbar-multiple-rows {
+    min-height: var(--mat-toolbar-mobile-height, 56px);
+  }
+}
+</style><style ng-app-id="ng">.mat-mdc-button-base {
+  text-decoration: none;
+}
+.mat-mdc-button-base .mat-icon {
+  min-height: fit-content;
+  flex-shrink: 0;
+}
+@media (hover: none) {
+  .mat-mdc-button-base:hover > span.mat-mdc-button-persistent-ripple::before {
+    opacity: 0;
+  }
+}
+
+.mdc-button {
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 64px;
+  border: none;
+  outline: none;
+  line-height: inherit;
+  -webkit-appearance: none;
+  overflow: visible;
+  vertical-align: middle;
+  background: transparent;
+  padding: 0 8px;
+}
+.mdc-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.mdc-button:active {
+  outline: none;
+}
+.mdc-button:hover {
+  cursor: pointer;
+}
+.mdc-button:disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.mdc-button[hidden] {
+  display: none;
+}
+.mdc-button .mdc-button__label {
+  position: relative;
+}
+
+.mat-mdc-button {
+  padding: 0 var(--mat-button-text-horizontal-padding, 12px);
+  height: var(--mat-button-text-container-height, 40px);
+  font-family: var(--mat-button-text-label-text-font, var(--mat-sys-label-large-font));
+  font-size: var(--mat-button-text-label-text-size, var(--mat-sys-label-large-size));
+  letter-spacing: var(--mat-button-text-label-text-tracking, var(--mat-sys-label-large-tracking));
+  text-transform: var(--mat-button-text-label-text-transform);
+  font-weight: var(--mat-button-text-label-text-weight, var(--mat-sys-label-large-weight));
+}
+.mat-mdc-button, .mat-mdc-button .mdc-button__ripple {
+  border-radius: var(--mat-button-text-container-shape, var(--mat-sys-corner-full));
+}
+.mat-mdc-button:not(:disabled) {
+  color: var(--mat-button-text-label-text-color, var(--mat-sys-primary));
+}
+.mat-mdc-button[disabled], .mat-mdc-button.mat-mdc-button-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--mat-button-text-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));
+}
+.mat-mdc-button.mat-mdc-button-disabled-interactive {
+  pointer-events: auto;
+}
+.mat-mdc-button:has(.material-icons, .material-symbols-outlined, .material-symbols-rounded,
+.material-symbols-sharp, mat-icon, [matButtonIcon]) {
+  padding: 0 var(--mat-button-text-with-icon-horizontal-padding, 16px);
+}
+.mat-mdc-button > .mat-icon {
+  margin-right: var(--mat-button-text-icon-spacing, 8px);
+  margin-left: var(--mat-button-text-icon-offset, -4px);
+}
+[dir=rtl] .mat-mdc-button > .mat-icon {
+  margin-right: var(--mat-button-text-icon-offset, -4px);
+  margin-left: var(--mat-button-text-icon-spacing, 8px);
+}
+.mat-mdc-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-text-icon-offset, -4px);
+  margin-left: var(--mat-button-text-icon-spacing, 8px);
+}
+[dir=rtl] .mat-mdc-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-text-icon-spacing, 8px);
+  margin-left: var(--mat-button-text-icon-offset, -4px);
+}
+.mat-mdc-button .mat-ripple-element {
+  background-color: var(--mat-button-text-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent));
+}
+.mat-mdc-button .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-text-state-layer-color, var(--mat-sys-primary));
+}
+.mat-mdc-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-text-disabled-state-layer-color, var(--mat-sys-on-surface-variant));
+}
+.mat-mdc-button:hover > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-text-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+}
+.mat-mdc-button.cdk-program-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-button.cdk-keyboard-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-button.mat-mdc-button-disabled-interactive:focus > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-text-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));
+}
+.mat-mdc-button:active > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-text-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+}
+.mat-mdc-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: var(--mat-button-text-touch-target-size, 48px);
+  display: var(--mat-button-text-touch-target-display, block);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.mat-mdc-unelevated-button {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: var(--mat-button-filled-container-height, 40px);
+  font-family: var(--mat-button-filled-label-text-font, var(--mat-sys-label-large-font));
+  font-size: var(--mat-button-filled-label-text-size, var(--mat-sys-label-large-size));
+  letter-spacing: var(--mat-button-filled-label-text-tracking, var(--mat-sys-label-large-tracking));
+  text-transform: var(--mat-button-filled-label-text-transform);
+  font-weight: var(--mat-button-filled-label-text-weight, var(--mat-sys-label-large-weight));
+  padding: 0 var(--mat-button-filled-horizontal-padding, 24px);
+}
+.mat-mdc-unelevated-button > .mat-icon {
+  margin-right: var(--mat-button-filled-icon-spacing, 8px);
+  margin-left: var(--mat-button-filled-icon-offset, -8px);
+}
+[dir=rtl] .mat-mdc-unelevated-button > .mat-icon {
+  margin-right: var(--mat-button-filled-icon-offset, -8px);
+  margin-left: var(--mat-button-filled-icon-spacing, 8px);
+}
+.mat-mdc-unelevated-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-filled-icon-offset, -8px);
+  margin-left: var(--mat-button-filled-icon-spacing, 8px);
+}
+[dir=rtl] .mat-mdc-unelevated-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-filled-icon-spacing, 8px);
+  margin-left: var(--mat-button-filled-icon-offset, -8px);
+}
+.mat-mdc-unelevated-button .mat-ripple-element {
+  background-color: var(--mat-button-filled-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent));
+}
+.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-filled-state-layer-color, var(--mat-sys-on-primary));
+}
+.mat-mdc-unelevated-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-filled-disabled-state-layer-color, var(--mat-sys-on-surface-variant));
+}
+.mat-mdc-unelevated-button:hover > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-filled-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+}
+.mat-mdc-unelevated-button.cdk-program-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-unelevated-button.cdk-keyboard-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive:focus > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-filled-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));
+}
+.mat-mdc-unelevated-button:active > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-filled-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+}
+.mat-mdc-unelevated-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: var(--mat-button-filled-touch-target-size, 48px);
+  display: var(--mat-button-filled-touch-target-display, block);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.mat-mdc-unelevated-button:not(:disabled) {
+  color: var(--mat-button-filled-label-text-color, var(--mat-sys-on-primary));
+  background-color: var(--mat-button-filled-container-color, var(--mat-sys-primary));
+}
+.mat-mdc-unelevated-button, .mat-mdc-unelevated-button .mdc-button__ripple {
+  border-radius: var(--mat-button-filled-container-shape, var(--mat-sys-corner-full));
+}
+.mat-mdc-unelevated-button .mat-mdc-button-progress-indicator-container {
+  --mat-progress-spinner-active-indicator-color: var(--mat-button-filled-progress-active-indicator-color, var(--mat-sys-on-primary));
+}
+.mat-mdc-unelevated-button[disabled], .mat-mdc-unelevated-button.mat-mdc-button-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--mat-button-filled-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));
+  background-color: var(--mat-button-filled-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent));
+}
+.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive {
+  pointer-events: auto;
+}
+
+.mat-mdc-raised-button {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--mat-button-protected-container-elevation-shadow, var(--mat-sys-level1));
+  height: var(--mat-button-protected-container-height, 40px);
+  font-family: var(--mat-button-protected-label-text-font, var(--mat-sys-label-large-font));
+  font-size: var(--mat-button-protected-label-text-size, var(--mat-sys-label-large-size));
+  letter-spacing: var(--mat-button-protected-label-text-tracking, var(--mat-sys-label-large-tracking));
+  text-transform: var(--mat-button-protected-label-text-transform);
+  font-weight: var(--mat-button-protected-label-text-weight, var(--mat-sys-label-large-weight));
+  padding: 0 var(--mat-button-protected-horizontal-padding, 24px);
+}
+.mat-mdc-raised-button > .mat-icon {
+  margin-right: var(--mat-button-protected-icon-spacing, 8px);
+  margin-left: var(--mat-button-protected-icon-offset, -8px);
+}
+[dir=rtl] .mat-mdc-raised-button > .mat-icon {
+  margin-right: var(--mat-button-protected-icon-offset, -8px);
+  margin-left: var(--mat-button-protected-icon-spacing, 8px);
+}
+.mat-mdc-raised-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-protected-icon-offset, -8px);
+  margin-left: var(--mat-button-protected-icon-spacing, 8px);
+}
+[dir=rtl] .mat-mdc-raised-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-protected-icon-spacing, 8px);
+  margin-left: var(--mat-button-protected-icon-offset, -8px);
+}
+.mat-mdc-raised-button .mat-ripple-element {
+  background-color: var(--mat-button-protected-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent));
+}
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-protected-state-layer-color, var(--mat-sys-primary));
+}
+.mat-mdc-raised-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-protected-disabled-state-layer-color, var(--mat-sys-on-surface-variant));
+}
+.mat-mdc-raised-button:hover > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-protected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+}
+.mat-mdc-raised-button.cdk-program-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-raised-button.cdk-keyboard-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-raised-button.mat-mdc-button-disabled-interactive:focus > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-protected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));
+}
+.mat-mdc-raised-button:active > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-protected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+}
+.mat-mdc-raised-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: var(--mat-button-protected-touch-target-size, 48px);
+  display: var(--mat-button-protected-touch-target-display, block);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.mat-mdc-raised-button:not(:disabled) {
+  color: var(--mat-button-protected-label-text-color, var(--mat-sys-primary));
+  background-color: var(--mat-button-protected-container-color, var(--mat-sys-surface));
+}
+.mat-mdc-raised-button, .mat-mdc-raised-button .mdc-button__ripple {
+  border-radius: var(--mat-button-protected-container-shape, var(--mat-sys-corner-full));
+}
+@media (hover: hover) {
+  .mat-mdc-raised-button:hover {
+    box-shadow: var(--mat-button-protected-hover-container-elevation-shadow, var(--mat-sys-level2));
+  }
+}
+.mat-mdc-raised-button:focus {
+  box-shadow: var(--mat-button-protected-focus-container-elevation-shadow, var(--mat-sys-level1));
+}
+.mat-mdc-raised-button:active, .mat-mdc-raised-button:focus:active {
+  box-shadow: var(--mat-button-protected-pressed-container-elevation-shadow, var(--mat-sys-level1));
+}
+.mat-mdc-raised-button[disabled], .mat-mdc-raised-button.mat-mdc-button-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--mat-button-protected-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));
+  background-color: var(--mat-button-protected-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent));
+}
+.mat-mdc-raised-button[disabled].mat-mdc-button-disabled, .mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled {
+  box-shadow: var(--mat-button-protected-disabled-container-elevation-shadow, var(--mat-sys-level0));
+}
+.mat-mdc-raised-button.mat-mdc-button-disabled-interactive {
+  pointer-events: auto;
+}
+
+.mat-mdc-outlined-button {
+  border-style: solid;
+  transition: border 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: var(--mat-button-outlined-container-height, 40px);
+  font-family: var(--mat-button-outlined-label-text-font, var(--mat-sys-label-large-font));
+  font-size: var(--mat-button-outlined-label-text-size, var(--mat-sys-label-large-size));
+  letter-spacing: var(--mat-button-outlined-label-text-tracking, var(--mat-sys-label-large-tracking));
+  text-transform: var(--mat-button-outlined-label-text-transform);
+  font-weight: var(--mat-button-outlined-label-text-weight, var(--mat-sys-label-large-weight));
+  border-radius: var(--mat-button-outlined-container-shape, var(--mat-sys-corner-full));
+  border-width: var(--mat-button-outlined-outline-width, 1px);
+  padding: 0 var(--mat-button-outlined-horizontal-padding, 24px);
+}
+.mat-mdc-outlined-button > .mat-icon {
+  margin-right: var(--mat-button-outlined-icon-spacing, 8px);
+  margin-left: var(--mat-button-outlined-icon-offset, -8px);
+}
+[dir=rtl] .mat-mdc-outlined-button > .mat-icon {
+  margin-right: var(--mat-button-outlined-icon-offset, -8px);
+  margin-left: var(--mat-button-outlined-icon-spacing, 8px);
+}
+.mat-mdc-outlined-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-outlined-icon-offset, -8px);
+  margin-left: var(--mat-button-outlined-icon-spacing, 8px);
+}
+[dir=rtl] .mat-mdc-outlined-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-outlined-icon-spacing, 8px);
+  margin-left: var(--mat-button-outlined-icon-offset, -8px);
+}
+.mat-mdc-outlined-button .mat-ripple-element {
+  background-color: var(--mat-button-outlined-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent));
+}
+.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-outlined-state-layer-color, var(--mat-sys-primary));
+}
+.mat-mdc-outlined-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-outlined-disabled-state-layer-color, var(--mat-sys-on-surface-variant));
+}
+.mat-mdc-outlined-button:hover > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-outlined-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+}
+.mat-mdc-outlined-button.cdk-program-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-outlined-button.cdk-keyboard-focused > .mat-mdc-button-persistent-ripple::before, .mat-mdc-outlined-button.mat-mdc-button-disabled-interactive:focus > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-outlined-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));
+}
+.mat-mdc-outlined-button:active > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-outlined-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+}
+.mat-mdc-outlined-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: var(--mat-button-outlined-touch-target-size, 48px);
+  display: var(--mat-button-outlined-touch-target-display, block);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.mat-mdc-outlined-button:not(:disabled) {
+  color: var(--mat-button-outlined-label-text-color, var(--mat-sys-primary));
+  border-color: var(--mat-button-outlined-outline-color, var(--mat-sys-outline));
+}
+.mat-mdc-outlined-button[disabled], .mat-mdc-outlined-button.mat-mdc-button-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--mat-button-outlined-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));
+  border-color: var(--mat-button-outlined-disabled-outline-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent));
+}
+.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive {
+  pointer-events: auto;
+}
+
+.mat-tonal-button {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: var(--mat-button-tonal-container-height, 40px);
+  font-family: var(--mat-button-tonal-label-text-font, var(--mat-sys-label-large-font));
+  font-size: var(--mat-button-tonal-label-text-size, var(--mat-sys-label-large-size));
+  letter-spacing: var(--mat-button-tonal-label-text-tracking, var(--mat-sys-label-large-tracking));
+  text-transform: var(--mat-button-tonal-label-text-transform);
+  font-weight: var(--mat-button-tonal-label-text-weight, var(--mat-sys-label-large-weight));
+  padding: 0 var(--mat-button-tonal-horizontal-padding, 24px);
+}
+.mat-tonal-button:not(:disabled) {
+  color: var(--mat-button-tonal-label-text-color, var(--mat-sys-on-secondary-container));
+  background-color: var(--mat-button-tonal-container-color, var(--mat-sys-secondary-container));
+}
+.mat-tonal-button, .mat-tonal-button .mdc-button__ripple {
+  border-radius: var(--mat-button-tonal-container-shape, var(--mat-sys-corner-full));
+}
+.mat-tonal-button[disabled], .mat-tonal-button.mat-mdc-button-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--mat-button-tonal-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));
+  background-color: var(--mat-button-tonal-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent));
+}
+.mat-tonal-button.mat-mdc-button-disabled-interactive {
+  pointer-events: auto;
+}
+.mat-tonal-button > .mat-icon {
+  margin-right: var(--mat-button-tonal-icon-spacing, 8px);
+  margin-left: var(--mat-button-tonal-icon-offset, -8px);
+}
+[dir=rtl] .mat-tonal-button > .mat-icon {
+  margin-right: var(--mat-button-tonal-icon-offset, -8px);
+  margin-left: var(--mat-button-tonal-icon-spacing, 8px);
+}
+.mat-tonal-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-tonal-icon-offset, -8px);
+  margin-left: var(--mat-button-tonal-icon-spacing, 8px);
+}
+[dir=rtl] .mat-tonal-button .mdc-button__label + .mat-icon {
+  margin-right: var(--mat-button-tonal-icon-spacing, 8px);
+  margin-left: var(--mat-button-tonal-icon-offset, -8px);
+}
+.mat-tonal-button .mat-ripple-element {
+  background-color: var(--mat-button-tonal-ripple-color, color-mix(in srgb, var(--mat-sys-on-secondary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent));
+}
+.mat-tonal-button .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-tonal-state-layer-color, var(--mat-sys-on-secondary-container));
+}
+.mat-tonal-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before {
+  background-color: var(--mat-button-tonal-disabled-state-layer-color, var(--mat-sys-on-surface-variant));
+}
+.mat-tonal-button:hover > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-tonal-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+}
+.mat-tonal-button.cdk-program-focused > .mat-mdc-button-persistent-ripple::before, .mat-tonal-button.cdk-keyboard-focused > .mat-mdc-button-persistent-ripple::before, .mat-tonal-button.mat-mdc-button-disabled-interactive:focus > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-tonal-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));
+}
+.mat-tonal-button:active > .mat-mdc-button-persistent-ripple::before {
+  opacity: var(--mat-button-tonal-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+}
+.mat-tonal-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: var(--mat-button-tonal-touch-target-size, 48px);
+  display: var(--mat-button-tonal-touch-target-display, block);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.mat-mdc-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-tonal-button {
+  -webkit-tap-highlight-color: transparent;
+}
+.mat-mdc-button .mat-mdc-button-ripple,
+.mat-mdc-button .mat-mdc-button-persistent-ripple,
+.mat-mdc-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-unelevated-button .mat-mdc-button-ripple,
+.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple,
+.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-raised-button .mat-mdc-button-ripple,
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple,
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-outlined-button .mat-mdc-button-ripple,
+.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple,
+.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before,
+.mat-tonal-button .mat-mdc-button-ripple,
+.mat-tonal-button .mat-mdc-button-persistent-ripple,
+.mat-tonal-button .mat-mdc-button-persistent-ripple::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.mat-mdc-button .mat-mdc-button-ripple,
+.mat-mdc-unelevated-button .mat-mdc-button-ripple,
+.mat-mdc-raised-button .mat-mdc-button-ripple,
+.mat-mdc-outlined-button .mat-mdc-button-ripple,
+.mat-tonal-button .mat-mdc-button-ripple {
+  overflow: hidden;
+}
+.mat-mdc-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before,
+.mat-tonal-button .mat-mdc-button-persistent-ripple::before {
+  content: "";
+  opacity: 0;
+}
+.mat-mdc-button .mdc-button__label,
+.mat-mdc-button .mat-icon,
+.mat-mdc-unelevated-button .mdc-button__label,
+.mat-mdc-unelevated-button .mat-icon,
+.mat-mdc-raised-button .mdc-button__label,
+.mat-mdc-raised-button .mat-icon,
+.mat-mdc-outlined-button .mdc-button__label,
+.mat-mdc-outlined-button .mat-icon,
+.mat-tonal-button .mdc-button__label,
+.mat-tonal-button .mat-icon {
+  z-index: 1;
+  position: relative;
+}
+.mat-mdc-button .mat-focus-indicator,
+.mat-mdc-unelevated-button .mat-focus-indicator,
+.mat-mdc-raised-button .mat-focus-indicator,
+.mat-mdc-outlined-button .mat-focus-indicator,
+.mat-tonal-button .mat-focus-indicator {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: inherit;
+}
+.mat-mdc-button:focus-visible > .mat-focus-indicator::before,
+.mat-mdc-unelevated-button:focus-visible > .mat-focus-indicator::before,
+.mat-mdc-raised-button:focus-visible > .mat-focus-indicator::before,
+.mat-mdc-outlined-button:focus-visible > .mat-focus-indicator::before,
+.mat-tonal-button:focus-visible > .mat-focus-indicator::before {
+  content: "";
+  border-radius: inherit;
+}
+.mat-mdc-button._mat-animation-noopable,
+.mat-mdc-unelevated-button._mat-animation-noopable,
+.mat-mdc-raised-button._mat-animation-noopable,
+.mat-mdc-outlined-button._mat-animation-noopable,
+.mat-tonal-button._mat-animation-noopable {
+  transition: none !important;
+  animation: none !important;
+}
+.mat-mdc-button > .mat-icon,
+.mat-mdc-unelevated-button > .mat-icon,
+.mat-mdc-raised-button > .mat-icon,
+.mat-mdc-outlined-button > .mat-icon,
+.mat-tonal-button > .mat-icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  font-size: 1.125rem;
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
+.mat-mdc-outlined-button .mat-mdc-button-ripple,
+.mat-mdc-outlined-button .mdc-button__ripple {
+  top: -1px;
+  left: -1px;
+  bottom: -1px;
+  right: -1px;
+}
+
+.mat-mdc-unelevated-button .mat-focus-indicator::before,
+.mat-tonal-button .mat-focus-indicator::before,
+.mat-mdc-raised-button .mat-focus-indicator::before {
+  margin: calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px) * -1);
+}
+
+.mat-mdc-outlined-button .mat-focus-indicator::before {
+  margin: calc(calc(var(--mat-focus-indicator-border-width, 3px) + 3px) * -1);
+}
+
+.mat-mdc-button-progress-indicator-container {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mat-mdc-button-progress-indicator-shown mat-icon,
+.mat-mdc-button-progress-indicator-shown [matButtonIcon],
+.mat-mdc-button-progress-indicator-shown .mdc-button__label {
+  visibility: hidden;
+}
+</style><style ng-app-id="ng">@media (forced-colors: active) {
+  .mat-mdc-button:not(.mdc-button--outlined),
+  .mat-mdc-unelevated-button:not(.mdc-button--outlined),
+  .mat-mdc-raised-button:not(.mdc-button--outlined),
+  .mat-mdc-outlined-button:not(.mdc-button--outlined),
+  .mat-mdc-button-base.mat-tonal-button,
+  .mat-mdc-icon-button.mat-mdc-icon-button,
+  .mat-mdc-outlined-button .mdc-button__ripple {
+    outline: solid 1px;
+  }
+}
+</style><style ng-app-id="ng">.mat-focus-indicator {
+  position: relative;
+}
+.mat-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-focus-indicator-display, none);
+  border-width: var(--mat-focus-indicator-border-width, 3px);
+  border-style: var(--mat-focus-indicator-border-style, solid);
+  border-color: var(--mat-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-focus-indicator-border-radius, 4px);
+}
+.mat-focus-indicator:focus-visible::before {
+  content: "";
+}
+
+@media (forced-colors: active) {
+  html {
+    --mat-focus-indicator-display: block;
+    --mat-focus-indicator-fallback-border-style: none;
+  }
+}
+</style><style ng-app-id="ng">.actualidad-demo__label[_ngcontent-ng-c2536595395]{display:block;margin-bottom:6px;font-weight:700}.actualidad-demo__input[_ngcontent-ng-c2536595395]{width:min(100%,420px);min-height:44px;margin-bottom:16px;padding:8px 10px;border:3px solid var(--ink);background-color:#fff3d4;color:var(--ink);font:inherit}.actualidad-demo__input[_ngcontent-ng-c2536595395]:focus-visible{outline:3px solid var(--teal);outline-offset:3px}.actualidad-demo__resultados[_ngcontent-ng-c2536595395]{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:16px;align-items:stretch}.actualidad-demo__resultados[_ngcontent-ng-c2536595395] > div[_ngcontent-ng-c2536595395]{min-width:0}.actualidad-demo__resultados[_ngcontent-ng-c2536595395]   h3[_ngcontent-ng-c2536595395]{margin-bottom:8px}.actualidad-demo__resultados[_ngcontent-ng-c2536595395]   pre[_ngcontent-ng-c2536595395]{margin:0;white-space:pre-wrap;word-break:break-word}.actualidad-demo__salida[_ngcontent-ng-c2536595395]{padding:14px;border:2px solid var(--ink);background-color:#f4dca8}.actualidad-demo__output[_ngcontent-ng-c2536595395]{display:block;min-height:2.5em;font-weight:700}.actualidad-demo__nota[_ngcontent-ng-c2536595395]{margin-top:14px!important;font-size:18px!important}.actualidad-seccion[_ngcontent-ng-c2536595395]{margin-top:0!important;margin-bottom:16px}@media(max-width:640px){.actualidad-demo__resultados[_ngcontent-ng-c2536595395]{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click","input"],[]);</script>
+  <app-root ng-version="22.2.3" _nghost-ng-c527894907="" ngh="3" ng-server-context="ssg"><app-menu _ngcontent-ng-c527894907="" _nghost-ng-c177442650="" ngh="2"><mat-toolbar _ngcontent-ng-c177442650="" class="mat-toolbar menu-toolbar mat-toolbar-single-row" ngh="0"><span _ngcontent-ng-c177442650="" class="menu-title">Proyecto PHP</span><span _ngcontent-ng-c177442650="" class="menu-spacer"></span><nav _ngcontent-ng-c177442650="" aria-label="Secciones de la página" class="menu-links desktop-menu-links"><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Inicio</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/contexto" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/contexto" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Contexto histórico</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/actualidad" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed active-link" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/actualidad" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Implementación y usos</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/mas-informacion" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/mas-informacion" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Más información</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/twinteach" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/twinteach" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">TwinTeach</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/noticias" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/noticias" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Noticias</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a></nav><details _ngcontent-ng-c177442650="" class="mobile-menu"><summary _ngcontent-ng-c177442650="">Menú</summary><nav _ngcontent-ng-c177442650="" aria-label="Secciones de la página" class="menu-links mobile-menu-links"><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Inicio</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/contexto" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/contexto" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Contexto histórico</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/actualidad" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed active-link" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/actualidad" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Implementación y usos</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/mas-informacion" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/mas-informacion" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Más información</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/twinteach" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/twinteach" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">TwinTeach</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a><a _ngcontent-ng-c177442650="" mat-button="" routerlink="/noticias" routerlinkactive="active-link" class="mdc-button mat-mdc-button-base mat-mdc-button mat-unthemed" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" href="/ProyectoPhp/noticias" ngh="1" jsaction="click:;"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label">Noticias</span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></a></nav></details></mat-toolbar></app-menu><div _ngcontent-ng-c527894907="" class="site-image"><img _ngcontent-ng-c527894907="" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Escena de videojuegos retro"></div><main _ngcontent-ng-c527894907="" class="page-content"><router-outlet _ngcontent-ng-c527894907=""></router-outlet><app-implementacion-y-usos _nghost-ng-c2536595395="" ngh="0"><section _ngcontent-ng-c2536595395="" aria-labelledby="php-actualidad" class="actualidad-introduccion retro-window"><h1 _ngcontent-ng-c2536595395="" id="php-actualidad">PHP en la actualidad</h1><p _ngcontent-ng-c2536595395=""> A pesar de las críticas que a menudo recibe, PHP procesa el backend de cerca del 75 % de todas las páginas web de Internet. Gigantes tecnológicos, plataformas con millones de usuarios activos diarios y sistemas de comercio electrónico masivos confían en PHP o en herramientas creadas sobre él. </p><p _ngcontent-ng-c2536595395="">A continuación se presentan las principales empresas que utilizan PHP en su infraestructura central:</p></section><section _ngcontent-ng-c2536595395="" aria-labelledby="demo-php" class="retro-window actualidad-demo"><h2 _ngcontent-ng-c2536595395="" id="demo-php">Prueba un ejemplo de PHP</h2><p _ngcontent-ng-c2536595395="">Escribe un nombre y observa cómo cambiaría la respuesta de una página dinámica.</p><label _ngcontent-ng-c2536595395="" for="demo-nombre" class="actualidad-demo__label">Valor del parámetro «nombre»</label><input _ngcontent-ng-c2536595395="" id="demo-nombre" type="text" maxlength="60" class="actualidad-demo__input" value="Mundo" jsaction="input:;"><div _ngcontent-ng-c2536595395="" class="actualidad-demo__resultados"><div _ngcontent-ng-c2536595395=""><h3 _ngcontent-ng-c2536595395="">Código PHP</h3><pre _ngcontent-ng-c2536595395=""><code _ngcontent-ng-c2536595395="">&lt;?php
+$nombre = $_GET['nombre'] ?? 'Mundo';
+$nombreSeguro = htmlspecialchars(
+	$nombre,
+	ENT_QUOTES,
+	'UTF-8'
+);
+echo 'Hola, ' . $nombreSeguro;
+?&gt;</code></pre></div><div _ngcontent-ng-c2536595395="" class="actualidad-demo__salida"><h3 _ngcontent-ng-c2536595395="">Resultado</h3><output _ngcontent-ng-c2536595395="" aria-live="polite" class="actualidad-demo__output">Hola, Mundo</output></div></div><p _ngcontent-ng-c2536595395="" class="actualidad-demo__nota">La interacción es una simulación visual en el navegador; el código PHP se muestra como ejemplo y no se ejecuta en esta página.</p></section><details _ngcontent-ng-c2536595395="" aria-labelledby="redes-comunicacion" class="retro-window actualidad-seccion"><summary _ngcontent-ng-c2536595395="" id="redes-comunicacion">Gigantes de las Redes Sociales y la Comunicación</summary><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Meta / Facebook</h3><p _ngcontent-ng-c2536595395=""> Es el caso histórico más famoso. Facebook comenzó entero en PHP. Al crecer, para solucionar problemas de rendimiento a gran escala, crearon su propia máquina virtual (HHVM) y su propio dialecto de PHP derivado de este llamado Hack, el cual siguen utilizando hoy en sus servidores. </p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Wikipedia</h3><p _ngcontent-ng-c2536595395=""> Toda la enciclopedia libre funciona sobre MediaWiki, un motor de código abierto escrito enteramente en PHP que soporta miles de millones de visitas mensuales y procesamiento masivo de datos. </p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Slack</h3><p _ngcontent-ng-c2536595395=""> La infraestructura backend de mensajes de la plataforma de comunicación utiliza PHP en gran parte del lado del servidor para gestionar la lógica de las solicitudes de API a gran escala. </p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Tumblr</h3><p _ngcontent-ng-c2536595395="">La popular plataforma de blogs gestiona cientos de millones de publicaciones sobre una infraestructura basada en PHP.</p></article></details><details _ngcontent-ng-c2536595395="" aria-labelledby="comercio-electronico" class="retro-window actualidad-seccion"><summary _ngcontent-ng-c2536595395="" id="comercio-electronico">Comercio Electrónico y Plataformas de Venta (E-Commerce)</summary><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Etsy</h3><p _ngcontent-ng-c2536595395=""> El mercado global de productos artesanales y vintage maneja millones de transacciones diarias utilizando PHP en su arquitectura backend. Son muy conocidos en la comunidad tecnológica por su capacidad de desplegar código PHP docenas de veces al día en producción de forma segura. </p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Mailchimp</h3><p _ngcontent-ng-c2536595395="">La plataforma líder en email marketing y automatización utiliza PHP para procesar y enviar miles de millones de correos electrónicos al día.</p></article><div _ngcontent-ng-c2536595395="" class="actualidad-grupo-anidado"><h3 _ngcontent-ng-c2536595395="">Plataformas Magento y WooCommerce</h3><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h4 _ngcontent-ng-c2536595395="">Magento (Adobe Commerce)</h4><p _ngcontent-ng-c2536595395="">Utilizado por marcas globales como Nike, Ford o Coca-Cola para sus tiendas online. Está construido sobre PHP (Symfony).</p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h4 _ngcontent-ng-c2536595395="">WooCommerce</h4><p _ngcontent-ng-c2536595395="">Es la solución e-commerce que mueve marcas como Singer o Allbird, basada en WordPress/PHP.</p></article></div></details><details _ngcontent-ng-c2536595395="" aria-labelledby="cms-medios" class="retro-window actualidad-seccion"><summary _ngcontent-ng-c2536595395="" id="cms-medios">CMS y Medios de Comunicación (WordPress, Drupal y Joomla)</summary><p _ngcontent-ng-c2536595395="">Los mayores portales de noticias e instituciones públicas del mundo utilizan gestores de contenido (CMS) creados con PHP:</p><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">El País / Grupo Prisa, The New York Times y BBC America</h3><p _ngcontent-ng-c2536595395="">Confían en WordPress (PHP) para servir contenidos a millones de lectores en tiempo real.</p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">La Casa Blanca y la NASA</h3><p _ngcontent-ng-c2536595395="">Utilizan WordPress y Drupal (ambos en PHP) para garantizar la accesibilidad y seguridad de sus portales de información pública.</p></article></details><details _ngcontent-ng-c2536595395="" aria-labelledby="frameworks-modernos" class="retro-window actualidad-seccion"><summary _ngcontent-ng-c2536595395="" id="frameworks-modernos">Empresas que utilizan Frameworks Modernos (Laravel / Symfony)</summary><p _ngcontent-ng-c2536595395="">El auge de herramientas como Laravel y Symfony ha llevado a PHP a un estándar empresarial contemporáneo de gran nivel:</p><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Spotify</h3><p _ngcontent-ng-c2536595395="">Utiliza componentes de Symfony (PHP) para gestionar ciertos servicios de sus plataformas web y portales de creadores.</p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Pfizer</h3><p _ngcontent-ng-c2536595395="">La farmacéutica multinacional utiliza plataformas y herramientas web internas y externas impulsadas por Symfony/PHP.</p></article><article _ngcontent-ng-c2536595395="" class="actualidad-subseccion"><h3 _ngcontent-ng-c2536595395="">Twitch</h3><p _ngcontent-ng-c2536595395="">Aunque utiliza múltiples lenguajes en su infraestructura distribuida, aprovecha servicios en PHP en su backend para la gestión de cuentas y APIs de usuarios.</p></article></details><details _ngcontent-ng-c2536595395="" aria-labelledby="resumen-php" class="retro-window actualidad-seccion actualidad-resumen"><summary _ngcontent-ng-c2536595395="" id="resumen-php">¿Por qué lo siguen eligiendo estas empresas?</summary><table _ngcontent-ng-c2536595395="" class="actualidad-tabla"><thead _ngcontent-ng-c2536595395=""><tr _ngcontent-ng-c2536595395=""><th _ngcontent-ng-c2536595395="" scope="col">Factor</th><th _ngcontent-ng-c2536595395="" scope="col">Razón por la que lo usan las grandes empresas</th></tr></thead><tbody _ngcontent-ng-c2536595395=""><tr _ngcontent-ng-c2536595395=""><th _ngcontent-ng-c2536595395="" scope="row">Rendimiento moderno</th><td _ngcontent-ng-c2536595395="">Las versiones 8.x con compilación JIT duplican la velocidad respecto al PHP clásico de hace una década.</td></tr><tr _ngcontent-ng-c2536595395=""><th _ngcontent-ng-c2536595395="" scope="row">Ecosistema empresarial</th><td _ngcontent-ng-c2536595395="">Frameworks como Laravel permiten desarrollo rápido con arquitectura limpia y máxima seguridad.</td></tr><tr _ngcontent-ng-c2536595395=""><th _ngcontent-ng-c2536595395="" scope="row">Escalabilidad probada</th><td _ngcontent-ng-c2536595395="">Casos como Wikipedia o Etsy demuestran que PHP puede escalar a miles de millones de peticiones si la arquitectura es adecuada.</td></tr></tbody></table></details></app-implementacion-y-usos><!----></main></app-root>
+<script src="main-7WWV6KJY.js" type="module"></script>
+
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"n":{"2":"hfn","5":"hfn2"},"t":{"5":"t0"},"c":{"5":[]}},{"n":{"1":"0f","6":"5fnf","8":"7fnf","10":"9fnf","12":"11fnf","14":"13fnf","16":"15fnf","23":"22fnf","25":"24fnf","27":"26fnf","29":"28fnf","31":"30fnf","33":"32fnf"}},{"c":{"4":[{"i":"c2536595395","r":1}]}}]}</script><script>document.querySelectorAll('link[data-beasties-media]').forEach(function(l){l.media=l.getAttribute('data-beasties-media');l.removeAttribute('data-beasties-media')})</script></body></html>
