@@ -19,6 +19,10 @@
 	flex: 1 1 auto;
 }
 
+.mobile-menu {
+	display: none;
+}
+
 .menu-links {
 	display: flex;
 	flex-wrap: wrap;
@@ -72,12 +76,17 @@
 
 @media (max-width: 640px) {
 	.menu-toolbar {
+		position: relative;
+		z-index: 10;
+		flex-wrap: nowrap;
+		align-items: center;
 		gap: 12px;
 		padding: 12px 10px;
 	}
 
 	.menu-title {
-		width: 100%;
+		flex: 1 1 auto;
+		width: auto;
 		font-size: 12px;
 	}
 
@@ -85,14 +94,63 @@
 		display: none;
 	}
 
-	.menu-links {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		justify-content: stretch;
-		width: 100%;
+	.desktop-menu-links {
+		display: none;
 	}
 
-	.menu-links a {
+	.mobile-menu {
+		position: relative;
+		display: block;
+		flex: 0 0 auto;
+	}
+
+	.mobile-menu > summary {
+		display: flex;
+		min-height: 42px;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 6px 10px;
+		border: 2px solid var(--teal);
+		background-color: var(--cream);
+		color: var(--ink);
+		font-family: 'VT323', 'Courier New', monospace;
+		font-size: 20px;
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.mobile-menu > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.mobile-menu > summary::after {
+		content: '+';
+	}
+
+	.mobile-menu[open] > summary {
+		background-color: var(--orange);
+	}
+
+	.mobile-menu[open] > summary::after {
+		content: '\2212';
+	}
+
+	.mobile-menu-links {
+		position: absolute;
+		top: calc(100% + 12px);
+		right: 0;
+		z-index: 20;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		width: min(340px, calc(100vw - 20px));
+		padding: 10px;
+		border: 3px solid var(--ink);
+		background-color: var(--night);
+		box-shadow: 5px 5px 0 var(--teal);
+	}
+
+	.mobile-menu-links a {
 		display: flex;
 		min-width: 0;
 		min-height: 42px;

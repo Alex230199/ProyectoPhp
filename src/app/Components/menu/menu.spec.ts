@@ -20,4 +20,16 @@ describe('Menu', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('opens the mobile menu with all section links', () => {
+    fixture.detectChanges();
+
+    const mobileMenu = fixture.nativeElement.querySelector('.mobile-menu') as HTMLDetailsElement;
+    expect(mobileMenu.querySelectorAll('a').length).toBe(6);
+    expect(mobileMenu.open).toBe(false);
+
+    mobileMenu.querySelector('summary')?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+
+    expect(mobileMenu.open).toBe(true);
+  });
 });

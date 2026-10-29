@@ -1,0 +1,8 @@
+.more-info-layout {
+	display: grid;
+	gap: 16px;
+}
+
+.more-info-layout > .info-panel {
+	margin-top: 0;
+}

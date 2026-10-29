@@ -1,7 +1,7 @@
 <mat-toolbar class="menu-toolbar">
 	<span class="menu-title">Proyecto PHP</span>
 	<span class="menu-spacer"></span>
-	<nav class="menu-links" aria-label="Secciones de la página">
+	<nav class="menu-links desktop-menu-links" aria-label="Secciones de la página">
 		<a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
 		<a mat-button routerLink="/contexto" routerLinkActive="active-link">Contexto histórico</a>
 		<a mat-button routerLink="/actualidad" routerLinkActive="active-link">Implementación y usos</a>
@@ -9,4 +9,15 @@
 		<a mat-button routerLink="/twinteach" routerLinkActive="active-link">TwinTeach</a>
 		<a mat-button routerLink="/noticias" routerLinkActive="active-link">Noticias</a>
 	</nav>
+	<details class="mobile-menu" #mobileMenu>
+		<summary>Menú</summary>
+		<nav class="menu-links mobile-menu-links" aria-label="Secciones de la página">
+			<a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="mobileMenu.open = false">Inicio</a>
+			<a mat-button routerLink="/contexto" routerLinkActive="active-link" (click)="mobileMenu.open = false">Contexto histórico</a>
+			<a mat-button routerLink="/actualidad" routerLinkActive="active-link" (click)="mobileMenu.open = false">Implementación y usos</a>
+			<a mat-button routerLink="/mas-informacion" routerLinkActive="active-link" (click)="mobileMenu.open = false">Más información</a>
+			<a mat-button routerLink="/twinteach" routerLinkActive="active-link" (click)="mobileMenu.open = false">TwinTeach</a>
+			<a mat-button routerLink="/noticias" routerLinkActive="active-link" (click)="mobileMenu.open = false">Noticias</a>
+		</nav>
+	</details>
 </mat-toolbar>

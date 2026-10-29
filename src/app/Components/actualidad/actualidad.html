@@ -6,8 +6,34 @@
 	<p>A continuación se presentan las principales empresas que utilizan PHP en su infraestructura central:</p>
 </section>
 
-<section class="actualidad-seccion" aria-labelledby="redes-comunicacion">
-	<h2 id="redes-comunicacion">Gigantes de las Redes Sociales y la Comunicación</h2>
+<section class="retro-window actualidad-demo" aria-labelledby="demo-php">
+	<h2 id="demo-php">Prueba un ejemplo de PHP</h2>
+	<p>Escribe un nombre y observa cómo cambiaría la respuesta de una página dinámica.</p>
+	<label class="actualidad-demo__label" for="demo-nombre">Valor del parámetro «nombre»</label>
+	<input id="demo-nombre" class="actualidad-demo__input" type="text" maxlength="60" [value]="demoNombre" (input)="actualizarDemoNombre($event)" />
+	<div class="actualidad-demo__resultados">
+		<div>
+			<h3>Código PHP</h3>
+			<pre><code>&lt;?php
+$nombre = $_GET['nombre'] ?? 'Mundo';
+$nombreSeguro = htmlspecialchars(
+	$nombre,
+	ENT_QUOTES,
+	'UTF-8'
+);
+echo 'Hola, ' . $nombreSeguro;
+?&gt;</code></pre>
+		</div>
+		<div class="actualidad-demo__salida">
+			<h3>Resultado</h3>
+			<output class="actualidad-demo__output" aria-live="polite">{{ demoResultado }}</output>
+		</div>
+	</div>
+	<p class="actualidad-demo__nota">La interacción es una simulación visual en el navegador; el código PHP se muestra como ejemplo y no se ejecuta en esta página.</p>
+</section>
+
+<details class="retro-window actualidad-seccion" aria-labelledby="redes-comunicacion">
+	<summary id="redes-comunicacion">Gigantes de las Redes Sociales y la Comunicación</summary>
 
 	<article class="actualidad-subseccion">
 		<h3>Meta / Facebook</h3>
@@ -34,10 +60,10 @@
 		<h3>Tumblr</h3>
 		<p>La popular plataforma de blogs gestiona cientos de millones de publicaciones sobre una infraestructura basada en PHP.</p>
 	</article>
-</section>
+</details>
 
-<section class="actualidad-seccion" aria-labelledby="comercio-electronico">
-	<h2 id="comercio-electronico">Comercio Electrónico y Plataformas de Venta (E-Commerce)</h2>
+<details class="retro-window actualidad-seccion" aria-labelledby="comercio-electronico">
+	<summary id="comercio-electronico">Comercio Electrónico y Plataformas de Venta (E-Commerce)</summary>
 
 	<article class="actualidad-subseccion">
 		<h3>Etsy</h3>
@@ -62,10 +88,10 @@
 			<p>Es la solución e-commerce que mueve marcas como Singer o Allbird, basada en WordPress/PHP.</p>
 		</article>
 	</div>
-</section>
+</details>
 
-<section class="actualidad-seccion" aria-labelledby="cms-medios">
-	<h2 id="cms-medios">CMS y Medios de Comunicación (WordPress, Drupal y Joomla)</h2>
+<details class="retro-window actualidad-seccion" aria-labelledby="cms-medios">
+	<summary id="cms-medios">CMS y Medios de Comunicación (WordPress, Drupal y Joomla)</summary>
 	<p>Los mayores portales de noticias e instituciones públicas del mundo utilizan gestores de contenido (CMS) creados con PHP:</p>
 
 	<article class="actualidad-subseccion">
@@ -77,10 +103,10 @@
 		<h3>La Casa Blanca y la NASA</h3>
 		<p>Utilizan WordPress y Drupal (ambos en PHP) para garantizar la accesibilidad y seguridad de sus portales de información pública.</p>
 	</article>
-</section>
+</details>
 
-<section class="actualidad-seccion" aria-labelledby="frameworks-modernos">
-	<h2 id="frameworks-modernos">Empresas que utilizan Frameworks Modernos (Laravel / Symfony)</h2>
+<details class="retro-window actualidad-seccion" aria-labelledby="frameworks-modernos">
+	<summary id="frameworks-modernos">Empresas que utilizan Frameworks Modernos (Laravel / Symfony)</summary>
 	<p>El auge de herramientas como Laravel y Symfony ha llevado a PHP a un estándar empresarial contemporáneo de gran nivel:</p>
 
 	<article class="actualidad-subseccion">
@@ -97,10 +123,10 @@
 		<h3>Twitch</h3>
 		<p>Aunque utiliza múltiples lenguajes en su infraestructura distribuida, aprovecha servicios en PHP en su backend para la gestión de cuentas y APIs de usuarios.</p>
 	</article>
-</section>
+</details>
 
-<section class="actualidad-seccion actualidad-resumen" aria-labelledby="resumen-php">
-	<h2 id="resumen-php">¿Por qué lo siguen eligiendo estas empresas?</h2>
+<details class="retro-window actualidad-seccion actualidad-resumen" aria-labelledby="resumen-php">
+	<summary id="resumen-php">¿Por qué lo siguen eligiendo estas empresas?</summary>
 	<table class="actualidad-tabla">
 		<thead>
 			<tr>
@@ -123,4 +149,4 @@
 			</tr>
 		</tbody>
 	</table>
-</section>
+</details>

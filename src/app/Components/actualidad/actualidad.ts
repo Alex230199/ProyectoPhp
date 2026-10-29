@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './actualidad.css',
   templateUrl: './actualidad.html',
 })
-export class ImplementacionYUsos {}
+export class ImplementacionYUsos {
+  demoNombre = 'Mundo';
+
+  actualizarDemoNombre(event: Event): void {
+    this.demoNombre = (event.target as HTMLInputElement).value;
+  }
+
+  get demoResultado(): string {
+    return `Hola, ${this.demoNombre || 'Mundo'}`;
+  }
+}
