@@ -1,44 +1,67 @@
-<section class="retro-window" aria-labelledby="proteccion-twinteach">
-	<h1>Twinteach: como nos afecta esta amenaza y qué soluciones hay para solucionarlo / prevenirlo</h1>
-	<h2 id="proteccion-twinteach">Comprobar la protección de TwinTeach</h2>
-	<p>
-		TwinTeach utiliza Angular en el frontend y Laravel en el backend. Laravel se ejecuta sobre PHP, por lo que la versión instalada en el servidor del backend debe comprobarse y actualizarse.
-	</p>
-	<h2>Comprobar la versión de PHP</h2>
-	<ol>
-		<li>Accede por SSH al servidor donde se ejecuta Laravel.</li>
-		<li>Ejecuta este comando para ver la versión de PHP disponible en la terminal:</li>
-	</ol>
-	<pre><code>php -v</code></pre>
-	<p>
-		Comprueba también la versión que utiliza el servidor web o PHP-FPM, ya que puede ser distinta de la versión de la terminal. Según el texto aportado, las versiones corregidas indicadas son 8.5.12, 8.4.27, 8.3.36 y 8.2.35. Si el servidor utiliza una versión anterior, actualízala a una versión corregida y compatible con el proyecto.
-	</p>
+<section class="retro-window twinteach-intro" aria-labelledby="proteccion-twinteach">
+	<h1 id="proteccion-twinteach">Protege el servidor PHP de TwinTeach</h1>
+	<p>TwinTeach utiliza Laravel en el backend, que depende de PHP. Esta guía ayuda a organizar la revisión y respuesta ante el aviso de seguridad.</p>
+	<p class="twinteach-notice"><strong>Importante:</strong> esta página no se conecta al servidor ni comprueba su estado. Marca cada paso solo después de que el equipo responsable lo haya verificado.</p>
+	<br>
 </section>
 
-<section aria-labelledby="capas-red-twinteach">
-	<h2 id="capas-red-twinteach">Revisar las capas de red</h2>
-	<p>
-		Comprueba que los servidores o proxies inversos expuestos a Internet, como Nginx, Apache o Cloudflare, tengan activas las reglas de protección disponibles mientras se prepara la actualización de PHP. Estas medidas son temporales y no sustituyen la actualización.
-	</p>
+<section class="twinteach-progress" aria-labelledby="progreso-twinteach">
+	<div class="twinteach-progress__heading">
+		<h2 id="progreso-twinteach">Lista de comprobación</h2>
+		<output aria-live="polite">{{ completedSteps }} de 4 pasos</output>
+	</div>
+	<progress [value]="completedSteps" max="4" aria-label="Progreso de la lista de comprobación"></progress>
 </section>
 
-<section aria-labelledby="indicios-explotacion">
-	<h2 id="indicios-explotacion">Buscar indicios de explotación</h2>
-	<p>
-		La detección puede ser difícil porque un ataque podría ocurrir antes de que Laravel registre la petición. Revisa los siguientes indicios en los registros y sistemas de auditoría:
-	</p>
-	<ul>
-		<li>
-			<strong>Registros de Nginx, Apache o PHP-FPM:</strong> busca peticiones anómalas o repetidas relacionadas con la subida de archivos, cabeceras <code>Content-Type</code> inusuales y errores repentinos de memoria (OOM).
-		</li>
-		<li>
-			<strong>Auditoría del sistema operativo:</strong> revisa las alertas de herramientas de integridad de archivos (FIM) y auditoría de procesos, como auditd en Linux.
-		</li>
-		<li>
-			<strong>Procesos del usuario de PHP:</strong> investiga si el usuario que ejecuta PHP, por ejemplo <code>www-data</code>, inició procesos de consola inesperados, abrió una shell o descargó archivos desconocidos.
-		</li>
-	</ul>
-	<p>
-		La ausencia de estos indicios no demuestra por sí sola que el sistema no haya sido comprometido. Si aparecen señales sospechosas, conserva los registros y solicita una revisión de seguridad del servidor.
-	</p>
+<section class="retro-window twinteach-step" [class.is-open]="isStepOpen(0)">
+	<div class="twinteach-step__header">
+		<button class="twinteach-step__expand" type="button" aria-controls="twinteach-step-1" [attr.aria-expanded]="isStepOpen(0)" (click)="toggleStepOpen(0)"><span class="twinteach-step__number">01</span><span class="twinteach-step__title">Comprueba qué versión de PHP ejecuta la web</span></button>
+		<button class="twinteach-step__toggle" type="button" [class.is-complete]="isStepComplete(0)" [attr.aria-pressed]="isStepComplete(0)" [attr.aria-label]="isStepComplete(0) ? 'Marcar como pendiente: comprobar la versión de PHP' : 'Marcar como completado: comprobar la versión de PHP'" (click)="toggleStepComplete(0)"><span aria-hidden="true">{{ isStepComplete(0) ? '✓' : '' }}</span></button>
+	</div>
+	<div id="twinteach-step-1" class="twinteach-step__body" [hidden]="!isStepOpen(0)">
+		<p>En el servidor, <code>php -v</code> muestra la versión de PHP de la consola:</p>
+		<pre><code>php -v</code></pre>
+		<p>Comprueba también la versión usada por el servidor web o PHP-FPM: puede ser distinta de la versión de consola. En entornos con contenedores, verifica la imagen que ejecuta la aplicación.</p>
+		<p><a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener noreferrer">Consulta las ramas de PHP con soporte oficial</a>.</p>
+		<p class="twinteach-step__hint">Marca el botón cuando hayas confirmado la versión de consola y la que utiliza la web.</p>
+	</div>
+</section>
+
+<section class="retro-window twinteach-step" [class.is-open]="isStepOpen(1)">
+	<div class="twinteach-step__header">
+		<button class="twinteach-step__expand" type="button" aria-controls="twinteach-step-2" [attr.aria-expanded]="isStepOpen(1)" (click)="toggleStepOpen(1)"><span class="twinteach-step__number">02</span><span class="twinteach-step__title">Actualiza a una versión corregida</span></button>
+		<button class="twinteach-step__toggle" type="button" [class.is-complete]="isStepComplete(1)" [attr.aria-pressed]="isStepComplete(1)" [attr.aria-label]="isStepComplete(1) ? 'Marcar como pendiente: actualizar PHP' : 'Marcar como completado: actualizar PHP'" (click)="toggleStepComplete(1)"><span aria-hidden="true">{{ isStepComplete(1) ? '✓' : '' }}</span></button>
+	</div>
+	<div id="twinteach-step-2" class="twinteach-step__body" [hidden]="!isStepOpen(1)">
+		<p>El aviso oficial del 21 de octubre de 2026 publicó correcciones para PHP 8.5.12, 8.4.27, 8.3.36 y 8.2.35. Elige la versión corregida compatible con la aplicación y sigue el procedimiento de actualización de tu sistema operativo o proveedor.</p>
+		<p>Las ramas antiguas pueden recibir parches de algunos proveedores, pero no del proyecto PHP. Confirma la disponibilidad del parche con quien mantiene el paquete antes de darlo por aplicado.</p>
+		<p><a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener noreferrer">Aviso de seguridad oficial y versiones corregidas</a></p>
+		<p class="twinteach-step__hint">Marca el paso cuando el equipo haya aplicado y comprobado la actualización.</p>
+	</div>
+</section>
+
+<section class="retro-window twinteach-step" [class.is-open]="isStepOpen(2)">
+	<div class="twinteach-step__header">
+		<button class="twinteach-step__expand" type="button" aria-controls="twinteach-step-3" [attr.aria-expanded]="isStepOpen(2)" (click)="toggleStepOpen(2)"><span class="twinteach-step__number">03</span><span class="twinteach-step__title">Reduce la exposición mientras actualizas</span></button>
+		<button class="twinteach-step__toggle" type="button" [class.is-complete]="isStepComplete(2)" [attr.aria-pressed]="isStepComplete(2)" [attr.aria-label]="isStepComplete(2) ? 'Marcar como pendiente: mitigación temporal' : 'Marcar como completado: mitigación temporal'" (click)="toggleStepComplete(2)"><span aria-hidden="true">{{ isStepComplete(2) ? '✓' : '' }}</span></button>
+	</div>
+	<div id="twinteach-step-3" class="twinteach-step__body" [hidden]="!isStepOpen(2)">
+		<p>Si la actualización no puede hacerse de inmediato, el equipo PHP recomienda desactivar temporalmente el seguimiento de progreso de subida de sesiones:</p>
+		<pre><code>session.upload_progress.enabled=0</code></pre>
+		<p>Aplica el ajuste en la configuración efectiva del servidor y reinicia todos los procesos PHP afectados. Esta medida solo reduce una ruta concreta del problema: no sustituye la actualización ni garantiza que el sistema esté protegido.</p>
+		<p><a href="https://www.php.net/archive/2026.php#2026-10-23-1" target="_blank" rel="noopener noreferrer">Nota oficial sobre esta mitigación temporal</a></p>
+		<p class="twinteach-step__hint">Marca este paso solo si la mitigación temporal era necesaria y ya está aplicada.</p>
+	</div>
+</section>
+
+<section class="retro-window twinteach-step" [class.is-open]="isStepOpen(3)">
+	<div class="twinteach-step__header">
+		<button class="twinteach-step__expand" type="button" aria-controls="twinteach-step-4" [attr.aria-expanded]="isStepOpen(3)" (click)="toggleStepOpen(3)"><span class="twinteach-step__number">04</span><span class="twinteach-step__title">Revisa señales y conserva evidencias</span></button>
+		<button class="twinteach-step__toggle" type="button" [class.is-complete]="isStepComplete(3)" [attr.aria-pressed]="isStepComplete(3)" [attr.aria-label]="isStepComplete(3) ? 'Marcar como pendiente: revisar señales' : 'Marcar como completado: revisar señales'" (click)="toggleStepComplete(3)"><span aria-hidden="true">{{ isStepComplete(3) ? '✓' : '' }}</span></button>
+	</div>
+	<div id="twinteach-step-4" class="twinteach-step__body" [hidden]="!isStepOpen(3)">
+		<p>Revisa los registros del servidor web y PHP-FPM, las alertas del sistema y la actividad de las cuentas de servicio en busca de errores o comportamientos inusuales alrededor del periodo de exposición.</p>
+		<p>La ausencia de señales visibles no demuestra que no haya habido acceso. Si encuentras indicios sospechosos, conserva los registros y solicita una revisión al equipo responsable de seguridad antes de limpiarlos o reiniciar servicios.</p>
+		<p class="twinteach-step__hint">Marca el paso cuando el equipo haya revisado los registros y documentado el resultado.</p>
+	</div>
 </section>

@@ -60,6 +60,7 @@
 
 .actualidad-seccion {
 	margin-top: 0 !important;
+	margin-bottom: 16px;
 }
 
 @media (max-width: 640px) {

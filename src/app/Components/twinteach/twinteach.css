@@ -1,0 +1,203 @@
+.twinteach-progress {
+	margin: 0 0 18px;
+	padding: 14px 18px;
+	border: 3px solid var(--ink);
+	background-color: var(--teal);
+	box-shadow: 4px 4px 0 var(--ink);
+}
+
+.twinteach-progress__heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.twinteach-progress__heading h2 {
+	margin: 0;
+	border: 0;
+	background: transparent;
+}
+
+.twinteach-progress__heading output {
+	flex: 0 0 auto;
+	font-weight: 700;
+}
+
+.twinteach-progress progress {
+	display: block;
+	width: 100%;
+	height: 14px;
+	margin-top: 10px;
+	border: 2px solid var(--ink);
+	background-color: var(--paper);
+	accent-color: var(--orange);
+}
+
+.twinteach-progress progress::-webkit-progress-bar {
+	background-color: var(--paper);
+}
+
+.twinteach-progress progress::-webkit-progress-value {
+	background-color: var(--orange);
+}
+
+.twinteach-progress progress::-moz-progress-bar {
+	background-color: var(--orange);
+}
+
+.twinteach-step {
+	margin-top: 0 !important;
+	margin-bottom: 16px !important;
+}
+
+.twinteach-step__header {
+	display: flex;
+	align-items: center;
+	min-height: 58px;
+	border-bottom: 3px solid var(--ink);
+	background-color: var(--teal);
+}
+
+.twinteach-step.is-open > .twinteach-step__header {
+	background-color: var(--orange);
+}
+
+.twinteach-step__number {
+	flex: 0 0 auto;
+	padding: 4px 7px;
+	border: 2px solid var(--ink);
+	background-color: var(--cream);
+	font-family: 'VT323', 'Courier New', monospace;
+	font-size: 20px;
+}
+
+.twinteach-step__title {
+	min-width: 0;
+}
+
+.twinteach-step__expand {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	min-height: 54px;
+	align-items: center;
+	gap: 12px;
+	padding: 8px 12px;
+	border: 0;
+	background: transparent;
+	color: var(--ink);
+	font-family: 'Press Start 2P', 'Courier New', monospace;
+	font-size: 11px;
+	line-height: 1.6;
+	text-align: left;
+	cursor: pointer;
+}
+
+.twinteach-step__toggle {
+	flex: 0 0 52px;
+	width: 52px;
+	height: 42px;
+	margin: 0 8px 0 0 !important;
+	border: 3px solid var(--ink);
+	background-color: var(--cream);
+	color: var(--ink);
+	font: inherit;
+	box-shadow: 3px 3px 0 var(--ink);
+	cursor: pointer;
+}
+
+.twinteach-step__toggle:not(.is-complete)::before {
+	content: '□';
+	font-size: 28px;
+}
+
+.twinteach-step__toggle.is-complete {
+	background-color: #8ac926;
+}
+
+.twinteach-step__toggle.is-complete span {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+.twinteach-step__toggle:hover {
+	background-color: var(--orange);
+}
+
+.twinteach-step__toggle.is-complete:hover {
+	background-color: #6fa319;
+	color: var(--ink);
+}
+
+.twinteach-step__toggle:active {
+	transform: translate(2px, 2px);
+	box-shadow: 1px 1px 0 var(--ink);
+}
+
+.twinteach-step__toggle:focus-visible {
+	z-index: 1;
+	outline: 3px solid var(--ink);
+	outline-offset: -5px;
+}
+
+.twinteach-step__expand:focus-visible {
+	outline: 3px solid var(--ink);
+	outline-offset: -5px;
+}
+
+.twinteach-step__body {
+	padding: 4px 16px 16px;
+}
+
+.twinteach-step__hint {
+	font-size: 18px !important;
+}
+
+.twinteach-notice {
+	padding: 10px;
+	border-left: 5px solid var(--teal);
+	background-color: #f4dca8;
+}
+
+@media (max-width: 640px) {
+	.twinteach-progress {
+		padding: 12px;
+	}
+
+	.twinteach-progress__heading {
+		align-items: flex-start;
+	}
+
+	.twinteach-progress__heading h2 {
+		font-size: 9px;
+	}
+
+	.twinteach-step__number {
+		font-size: 18px;
+	}
+
+	.twinteach-step__expand {
+		gap: 8px;
+		padding-right: 8px;
+		padding-left: 8px;
+		font-size: 9px;
+	}
+
+	.twinteach-step__number {
+		padding: 3px 5px;
+		font-size: 16px;
+	}
+
+	.twinteach-step__toggle {
+		flex-basis: 44px;
+		width: 44px;
+		height: 40px;
+		margin-right: 8px !important;
+	}
+
+	.twinteach-step__body {
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+}
